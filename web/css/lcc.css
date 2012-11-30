@@ -26,6 +26,7 @@ h1
 .headerRight {
     display:block;
     position:fixed;
+    width:60%;
     z-index:100;
     height:60px;
     font-size:18px;
@@ -366,4 +367,156 @@ h1
 .eventsText {
     color:#efefef;
     font-size:18px;
+}
+.funfactsBg {
+    height:700px;
+    background-image: url('../img/funfacts_bg.png');
+    width:100%;
+    background-repeat: repeat;
+    display: block;
+
+}
+.funFactsHeader {
+    color:#323232;
+    text-align: right;
+}
+.funfactsText {
+    color:#bc2e2c;
+    font-size:28px;
+    text-shadow:1px 1px 1px rgba(209,209,209,0.5);
+    text-align: right;
+}
+.funfactsDialler
+{
+    width:700px;
+    height:700px;
+    display: block;
+    float:left;
+}
+.funfactNumber {
+    width:100px;
+    height:100px;
+    position: absolute;
+    display:block;
+    border:1px solid #444;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background-image: url('../img/dialler.png');
+    text-align: center;
+    line-height:100px;
+    font-size:60px;
+    font-weight: bold;
+    color:#444;
+    box-shadow: inset 1px 1px 2px rgba(68,68,68,0.5);
+    text-shadow: 1px 1px 2px rgba(68,68,68,0.5);
+    cursor: pointer;
+}
+.funfactsDiallerCenter {
+    width:260px;
+    height:260px;
+    position: absolute;
+    background-image: url('../img/howie_bg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    left:220px;
+    top:180px;
+}
+.funfactNumber:hover {
+    background-image: url('../img/dialler_active.png');
+    color:#efefef;
+    text-shadow:0 -2px 1px rgba(68,68,68,0.5);
+    box-shadow: inset 1px 1px 2px rgba(68,68,68,0.75);
+}
+.funfaceNumberActive {
+    width:100px;
+    height:100px;
+    position: absolute;
+    display:block;
+    border:1px solid #444;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    background-image: url('../img/dialler.png');
+    text-align: center;
+    line-height:100px;
+    font-size:60px;
+    font-weight: bold;
+    color:#444;
+    box-shadow: inset 1px 1px 2px rgba(68,68,68,0.5);
+    text-shadow: 1px 1px 2px rgba(68,68,68,0.5);
+    cursor: default;
+    background-image: url('../img/dialler_active.png');
+    color:#efefef;
+    text-shadow:0 -2px 1px rgba(68,68,68,0.5);
+    box-shadow: inset 1px 1px 2px rgba(68,68,68,0.75);
+}
+.funfactOne
+{
+    top:40px;
+    left:300px;
+}
+.funfactSix
+{
+    top:480px;
+    left:300px;
+}
+.funfactTwo
+{
+    top:80px;
+    left:450px;
+}
+.funfactTen
+{
+    top:80px;
+    left:150px;
+}
+.funfactFive
+{
+    top:430px;
+    left:450px;
+}
+.funfactSeven
+{
+    top:430px;
+    left:150px;
+}
+.funfactThree
+{
+    top:190px;
+    left:520px;
+}
+.funfactNine
+{
+    top:190px;
+    left:70px;
+}
+.funfactFour
+{
+    top:320px;
+    left:520px;
+}
+.funfactEight
+{
+    top:320px;
+    left:70px;
+}
+.funfactsTextBox
+{
+    width:400px;
+    height:700px;
+    float:right;
+    margin-right:5%;
+    display:block;
+}
+.friendsBg {
+    height:700px;
+    background-image: url('../img/friends_bg.png');
+    width:100%;
+    background-repeat: repeat;
+    display: block;
+
+}
+.friendsHeader {
+
 }
