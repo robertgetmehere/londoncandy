@@ -1,0 +1,369 @@
+body {
+    display: block;
+    width:100%;
+    margin:0;
+    padding:0;
+    color:#666;
+    font-family: "nimbus-sans",sans-serif;
+    font-size:16px;
+    overflow-x:hidden;
+}
+h1
+{
+    font-size:42px;
+    font-weight:800;
+}
+.headerLeft {
+    display:block;
+    position:fixed;
+    z-index:100;
+    width:200px;
+    height:60px;
+    font-size:18px;
+    background-color:#fff;
+    top:0;
+}
+.headerRight {
+    display:block;
+    position:fixed;
+    z-index:100;
+    height:60px;
+    font-size:18px;
+    background-color:#fff;
+    top:0;
+    left:500px;
+}
+.pennant
+{
+    width:300px;
+    height:200px; /**85 of which is soc icons**/
+    display:block;
+    position:fixed;
+    z-index:100;
+    background-color: #fff;
+    top:0px;
+    left:200px;
+}
+.leftPennant {
+    width:150px;
+    position:fixed;
+    z-index:100;
+    top:200px;
+    left:200px;
+    height:52px;
+    background-image: url('../img/left_pennant.png');
+}
+.rightPennant {
+    width:155px;
+    position:fixed;
+    z-index:100;
+    top:200px;
+    left:350px;
+    height:52px;
+    background-image: url('../img/right_pennant.png');
+}
+.socPlugins
+{
+    margin:20px 0 20px 40px;
+    display:block;
+    float:left;
+}
+.menuItem
+{
+    height:20px;
+    line-height:23px;
+    padding:20px;
+    display:block;
+    float:right;
+    cursor:pointer;
+}
+.right40 {
+    margin-right:40px;
+}
+.left40 {
+    margin-left:40px;
+}
+.opacity95 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
+    filter: alpha(opacity=95);
+    -moz-opacity: 0.95;
+    -khtml-opacity: 0.95;
+    opacity: 0.95;
+}
+.boxBottomShadow
+{
+    box-shadow: 2px 2px 2px rgba(68,68,68,0.5);
+}
+.main {
+    width:100%;
+    min-height:700px;
+    display:block;
+    position: absolute;
+    top:0;
+    background-color: #efefef;
+    z-index:1;
+    overflow:hidden;
+}
+.lcc_logo_80 {
+    height:80px;
+    width:270px;
+    margin:20px 0 0 20px;
+    display: block;
+    background-image: url('../img/lcc_logo.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+.lcc_caption {
+    font-size:12px;
+    width:100%;
+    text-align:center;
+    line-height:16px;
+    display:block;
+    margin:10px 0;
+}
+.lcc_socIcons {
+    width:160px;
+    height:85px;
+    display:block;
+    margin: 0 auto;
+    text-align: center;
+}
+.lcc_icon {
+    margin:0 10px 10px 10px;
+    width:32px;
+    height:32px;
+    display:block;
+    float:left;
+    cursor:pointer;
+}
+.lcc_fb
+{
+    background-image: url('../img/icon_facebook.png');
+}
+.lcc_tw
+{
+    background-image: url('../img/icon_twitter.png');
+}
+.lcc_em
+{
+    background-image: url('../img/icon_email.png');
+}
+.lcc_yp
+{
+    background-image: url('../img/icon_yelp.png');
+}
+.lcc_fs
+{
+    background-image: url('../img/icon_foursquare.png');
+}
+.lcc_fl
+{
+    background-image: url('../img/icon_flickr.png');
+}
+.box {
+    width:100%;
+    min-height:550px;
+    display:block;
+    position: relative;
+    z-index:1;
+}
+.boxPanelLeft{
+    width:35%;
+    margin:3% 0 3% 5%;
+    height:94%;
+    display:block;
+    float:left;
+}
+.boxPanelRight{
+    width:55%;
+    height:94%;
+    margin:3% 5% 3% 0%;
+    display:block;
+    float:right;
+}
+.boxPanelRevLeft{
+    width:55%;
+    height:94%;
+    margin:3% 0 3% 5%;
+    display:block;
+    float:left;
+}
+.boxPanelRevRight{
+    width:35%;
+    margin:3% 5% 3% 0;
+    height:94%;
+    display:block;
+    float:right;
+}
+.kcec {
+    background-image: url('../img/keep_calm_eat_candy.png');
+    background-repeat: no-repeat;
+    background-position:bottom right;
+    width:90px;
+    height:160px;
+    display:block;
+    position:relative;
+    top:390px;
+    right: 40px;
+    float:right;
+    z-index:2;
+}
+.gallery {
+    background-image: url('../img/blue_triangle.png'),url('../img/gallery/g1.jpg');
+    background-size:20px 20px,100% 100%;
+    background-position: bottom left,top left;
+    background-repeat:repeat-x,no-repeat;
+    height:600px;
+    box-shadow: 0 -4px 2px rgba(68,68,68,0.5);
+}
+.galleryCaption
+{
+    font-size:42px;
+    height:42px;
+    line-height: 42px;
+    display:block;
+    position:relative;
+    top:440px;
+    left:200px;
+    z-index:3;
+    color:#fff;
+    text-shadow:0 -2px 1px rgba(68,68,68,0.5);
+}
+.candy
+{
+
+}
+.menuCandy:hover {
+    background-color:#c5E1F3;
+}
+/** CANDY STYLING**/
+.candyBg
+{
+    background-color:#c5E1F3;
+    background-image:url('../img/blue_check.png');
+    background-repeat: repeat;
+}
+.candyHeader {
+    color:#336699;
+}
+.candyText
+{
+    color:#993333;
+}
+.largeCircle {
+    width:260px;
+    height:260px;
+    display:block;
+    -webkit-border-radius: 130px;
+    -moz-border-radius: 130px;
+    border-radius: 130px;
+    box-shadow: inset 1px 1px 2px rgba(68,68,68,0.5);
+    position:absolute;
+    border:1px solid #999;
+    left:800px;
+    top:190px;
+    background-image: url('../img/andy_murray.png');
+    background-repeat: no-repeat;
+    background-size: auto auto;
+}
+.smallCircle {
+    width:120px;
+    height:120px;
+    display:block;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    border-radius: 60px;
+    position:absolute;
+    border:1px solid #999;
+    z-index:1;
+}
+.smallCircOne {
+    left:850px;
+    top:30px;
+    background-image: url('../img/circle_pic_one.png');
+    box-shadow: inset 1px 1px 2px rgba(239,239,239,0.5);
+}
+.smallCircTwo {
+    left:1040px;
+    top:120px;
+    background-image: url('../img/circle_pic_one.png');
+    box-shadow: inset 1px 1px 2px rgba(120,120,120,0.5);
+}
+.smallCircThree {
+    left:660px;
+    top:180px;
+    background-image: url('../img/circle_pic_one.png');
+    box-shadow: inset 1px 1px 2px rgba(239,239,239,0.5);
+}
+.smallCircFour {
+    left:650px;
+    top:360px;
+    background-image: url('../img/circle_pic_one.png');
+    box-shadow: inset 1px 1px 2px rgba(239,239,239,0.5);
+}
+.smallCircFive {
+    left:1090px;
+    top:340px;
+    background-image: url('../img/circle_pic_one.png');
+    box-shadow: inset 1px 1px 2px rgba(239,239,239,0.5);
+}
+.menuDrinks:hover {
+    background-color:#FAEDF4;
+}
+.drinksPhoto
+{
+    background-image:url('../img/drinks_photo.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    height:530px;
+    width:600px;
+    display:block;
+}
+.drinksBg
+{
+    background-image:url('../img/blue_triangle_down.png'),url('../img/pink_stripe.png');
+    background-repeat: repeat-x,repeat;
+    background-position:top left,top left;
+
+}
+.drinksHeader {
+    color:#336699;
+    text-align: right;
+}
+.drinksText
+{
+    color:#444;
+    text-align: right;
+}
+.eventsBg
+{
+    height:700px;
+    background-image: url('../img/events_bg.png');
+    width:100%;
+    background-size: auto auto;
+    background-position: top left;
+    display: block;
+    box-shadow:0 -2px 4px rgba(68,68,68,0.4);
+
+}
+.eventsBox {
+    margin: 0 0 0 43%;
+    width:450px;
+    padding:50px;
+    background-color: rgba(68,68,68,0.35);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    display:block;
+    position:absolute;
+    top: 170px;
+}
+.eventsHeader {
+    color:#efefef;
+    text-shadow:0 -2px 2px rgba(68,68,68,0.5);
+    margin-top:0;
+}
+.eventsText {
+    color:#efefef;
+    font-size:18px;
+}
