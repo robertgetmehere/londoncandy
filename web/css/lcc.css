@@ -4,7 +4,7 @@ body {
     margin:0;
     padding:0;
     color:#666;
-    font-family: "nimbus-sans",sans-serif;
+    font-family: "helvetica neue",sans-serif;
     font-size:16px;
     overflow-x:hidden;
 }
@@ -12,6 +12,7 @@ h1
 {
     font-size:42px;
     font-weight:800;
+    margin-top:0;
 }
 .headerLeft {
     display:block;
@@ -37,7 +38,7 @@ h1
 .pennant
 {
     width:300px;
-    height:200px; /**85 of which is soc icons**/
+    height:140px; /**85 of which is soc icons**/
     display:block;
     position:fixed;
     z-index:100;
@@ -49,7 +50,7 @@ h1
     width:150px;
     position:fixed;
     z-index:100;
-    top:200px;
+    top:140px;
     left:200px;
     height:52px;
     background-image: url('../img/left_pennant.png');
@@ -58,7 +59,7 @@ h1
     width:155px;
     position:fixed;
     z-index:100;
-    top:200px;
+    top:140px;
     left:350px;
     height:52px;
     background-image: url('../img/right_pennant.png');
@@ -74,6 +75,8 @@ h1
     height:20px;
     line-height:23px;
     padding:20px;
+    min-width:60px;
+    text-align: center;
     display:block;
     float:right;
     cursor:pointer;
@@ -163,51 +166,68 @@ h1
 }
 .box {
     width:100%;
-    min-height:550px;
+    min-height:600px;
     display:block;
     position: relative;
     z-index:1;
 }
+.boxPanel {
+    width:900px;
+    height:600px;
+    position:relative;
+    left:50%;
+    margin-left:-450px;
+    display: block;
+}
 .boxPanelLeft{
-    width:35%;
-    margin:3% 0 3% 5%;
-    height:94%;
+    width:400px;
+    height:550px;
+    margin:50px 50px 0 0;
     display:block;
     float:left;
 }
 .boxPanelRight{
-    width:55%;
-    height:94%;
-    margin:3% 5% 3% 0%;
+    width:450px;
+    height:550px;
+    margin:50px 0 0 0;
     display:block;
-    float:right;
+    float:left;
 }
 .boxPanelRevLeft{
-    width:55%;
-    height:94%;
-    margin:3% 0 3% 5%;
+    width:450px;
+    height:550px;
+    margin:50px 50px 0 0;
     display:block;
     float:left;
 }
 .boxPanelRevRight{
-    width:35%;
-    margin:3% 5% 3% 0;
-    height:94%;
+    width:400px;
+    height:550px;
+    margin:50px 0 0 0;
     display:block;
-    float:right;
+    overflow:hidden;
+    float:left;
 }
 .kcec {
     background-image: url('../img/keep_calm_eat_candy.png');
     background-repeat: no-repeat;
-    background-position:bottom right;
-    width:90px;
-    height:160px;
+    background-position:center center;
+    width:120px;
+    height:200px;
     display:block;
-    position:relative;
-    top:390px;
-    right: 40px;
-    float:right;
-    z-index:2;
+    position:fixed;
+    z-index:100;
+    background-color:#3D60A9;
+    bottom:0px;
+    left:100%;
+    margin-left:-140px;
+    box-shadow: -2px -2px 2px rgba(68,68,68,0.5);
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .gallery {
     background-image: url('../img/blue_triangle.png'),url('../img/gallery/g1.jpg');
@@ -219,7 +239,7 @@ h1
 }
 .galleryCaption
 {
-    font-size:42px;
+    font-size:38px;
     height:42px;
     line-height: 42px;
     display:block;
@@ -236,6 +256,24 @@ h1
 }
 .menuCandy:hover {
     background-color:#c5E1F3;
+    background-image:url('../img/blue_check.png');
+    background-repeat: repeat;
+}
+.menuDrinks:hover {
+    background-image:url('../img/pink_stripe.png');
+    background-repeat: repeat;
+    background-position:top left;
+}
+.menuFun:hover {
+    background-image:url('../img/funfacts_bg.png');
+    background-repeat: repeat;
+    background-position:top left;
+}
+.menuFriends:hover {
+    background-image:url('../img/friends_bg.png');
+    background-repeat: repeat;
+    background-position:top left;
+    color:#efefef;
 }
 /** CANDY STYLING**/
 .candyBg
@@ -243,6 +281,7 @@ h1
     background-color:#c5E1F3;
     background-image:url('../img/blue_check.png');
     background-repeat: repeat;
+    height:600px;
 }
 .candyHeader {
     color:#336699;
@@ -250,6 +289,7 @@ h1
 .candyText
 {
     color:#993333;
+    font-size:18px;
 }
 .largeCircle {
     width:260px;
@@ -259,10 +299,10 @@ h1
     -moz-border-radius: 130px;
     border-radius: 130px;
     box-shadow: inset 1px 1px 2px rgba(68,68,68,0.5);
-    position:absolute;
+    position:relative;
     border:1px solid #999;
-    left:800px;
-    top:190px;
+    left:100px;
+    top:140px;
     background-image: url('../img/andy_murray.png');
     background-repeat: no-repeat;
     background-size: auto auto;
@@ -274,50 +314,42 @@ h1
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
     border-radius: 60px;
-    position:absolute;
+    position:relative;
     border:1px solid #999;
     z-index:1;
 }
 .smallCircOne {
-    left:850px;
-    top:30px;
+    left:40px;
+    top:-230px;
     background-image: url('../img/circle_pic_one.png');
     box-shadow: inset 1px 1px 2px rgba(239,239,239,0.5);
 }
 .smallCircTwo {
-    left:1040px;
-    top:120px;
+    left:290px;
+    top:-380px;
     background-image: url('../img/circle_pic_one.png');
     box-shadow: inset 1px 1px 2px rgba(120,120,120,0.5);
 }
 .smallCircThree {
-    left:660px;
-    top:180px;
+    left:0px;
+    top:-120px;
     background-image: url('../img/circle_pic_one.png');
     box-shadow: inset 1px 1px 2px rgba(239,239,239,0.5);
 }
 .smallCircFour {
-    left:650px;
-    top:360px;
+    left:260px;
+    top:-220px;
     background-image: url('../img/circle_pic_one.png');
     box-shadow: inset 1px 1px 2px rgba(239,239,239,0.5);
 }
-.smallCircFive {
-    left:1090px;
-    top:340px;
-    background-image: url('../img/circle_pic_one.png');
-    box-shadow: inset 1px 1px 2px rgba(239,239,239,0.5);
-}
-.menuDrinks:hover {
-    background-color:#FAEDF4;
-}
+/** DRINKS STYLING **/
 .drinksPhoto
 {
     background-image:url('../img/drinks_photo.png');
     background-position: left center;
     background-repeat: no-repeat;
     height:530px;
-    width:600px;
+    width:400px;
     display:block;
 }
 .drinksBg
@@ -325,7 +357,7 @@ h1
     background-image:url('../img/blue_triangle_down.png'),url('../img/pink_stripe.png');
     background-repeat: repeat-x,repeat;
     background-position:top left,top left;
-
+    height:500px;
 }
 .drinksHeader {
     color:#336699;
@@ -334,21 +366,24 @@ h1
 .drinksText
 {
     color:#444;
-    text-align: right;
+    text-align:right;
+    font-size:18px;
 }
+/** EVENTS **/
 .eventsBg
 {
     height:700px;
-    background-image: url('../img/events_bg.png');
+    background-image:url('../img/yellow_triangle_up.png'), url('../img/events_bg.png');
     width:100%;
-    background-size: auto auto;
-    background-position: top left;
+    background-size: auto auto, 100% 100%;
+    background-position:bottom left, top left;
+    background-repeat: repeat-x,no-repeat;
     display: block;
     box-shadow:0 -2px 4px rgba(68,68,68,0.4);
 
 }
 .eventsBox {
-    margin: 0 0 0 43%;
+    margin: 0 0 0 40%;
     width:450px;
     padding:50px;
     background-color: rgba(68,68,68,0.35);
@@ -369,16 +404,19 @@ h1
     font-size:18px;
 }
 .funfactsBg {
-    height:700px;
+    height:650px;
     background-image: url('../img/funfacts_bg.png');
     width:100%;
     background-repeat: repeat;
     display: block;
 
 }
+/** FUN FACTS**/
 .funFactsHeader {
     color:#323232;
     text-align: right;
+    padding-top:40px;
+    text-shadow:-1px 1px 1px rgba(209,209,209,0.5);
 }
 .funfactsText {
     color:#bc2e2c;
@@ -388,9 +426,10 @@ h1
 }
 .funfactsDialler
 {
-    width:700px;
-    height:700px;
+    width:560px;
+    height:560px;
     display: block;
+    margin-top:50px;
     float:left;
 }
 .funfactNumber {
@@ -419,8 +458,8 @@ h1
     background-image: url('../img/howie_bg.png');
     background-position: center center;
     background-repeat: no-repeat;
-    left:220px;
-    top:180px;
+    left:150px;
+    top:190px;
 }
 .funfactNumber:hover {
     background-image: url('../img/dialler_active.png');
@@ -453,70 +492,170 @@ h1
 }
 .funfactOne
 {
-    top:40px;
-    left:300px;
+    top:50px;
+    left:230px;
 }
 .funfactSix
 {
-    top:480px;
-    left:300px;
+    top:490px;
+    left:230px;
 }
 .funfactTwo
 {
-    top:80px;
-    left:450px;
+    top:90px;
+    left:380px;
 }
 .funfactTen
 {
-    top:80px;
-    left:150px;
+    top:90px;
+    left:80px;
 }
 .funfactFive
 {
-    top:430px;
-    left:450px;
+    top:440px;
+    left:380px;
 }
 .funfactSeven
 {
-    top:430px;
-    left:150px;
+    top:440px;
+    left:80px;
 }
 .funfactThree
 {
-    top:190px;
-    left:520px;
+    top:200px;
+    left:450px;
 }
 .funfactNine
 {
-    top:190px;
-    left:70px;
+    top:200px;
+    left:0px;
 }
 .funfactFour
 {
-    top:320px;
-    left:520px;
+    top:330px;
+    left:450px;
 }
 .funfactEight
 {
-    top:320px;
-    left:70px;
+    top:330px;
+    left:0px;
 }
 .funfactsTextBox
 {
-    width:400px;
-    height:700px;
+    width:300px;
+    height:560px;
     float:right;
-    margin-right:5%;
     display:block;
+    font-size:16px;
 }
+/** FRIENDS **/
 .friendsBg {
-    height:700px;
-    background-image: url('../img/friends_bg.png');
+    height:600px;
+    background-image: url('../img/yellow_triangle_down.png'),url('../img/friends_bg.png');
     width:100%;
-    background-repeat: repeat;
+    background-position: top left,top left;
+    background-repeat: repeat-x, repeat;
     display: block;
+    box-shadow: 2px 2px 4px rgba(239,239,239,0.8);
+    border-bottom:2px solid rgba(239,239,239,0.5);
 
 }
 .friendsHeader {
+    width:55px;
+    height:100%;
+    display: block;
+    float:left;
+    background-image: url('../img/Friends_Header.png');
+    background-position: 0 50px;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.friendsPanel {
+    width:800px;
+    height:360px;
+    margin:50px 0 0 0;
+    display:block;
+    float:right;
+}
+.friendsButtonPanel {
+    width:80px;
+    height:360px;
+    display: block;
+    float:left;
+}
+.friendsContentPanel {
+    width: 560px;
+    height: 320px;
+    display: block;
+    float:left;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color:rgba(255,255,255,0.5);
+}
+.friendsIcon {
+    width:80px;
+    height:80px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom:40px;
+    background-color:rgba(255,255,255,0.5);
+}
+.friend_twitter {
+    background-image: url('../img/grey_twitter.png');
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+.friend_facebook {
+    background-image: url('../img/grey_facebook.png');
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+.newsPanel {
+    width:800px;
+    height:100px;
+    display:block;
+    float:right;
+}
+/** ABOUT PANEL**/
+.aboutBg {
+    height:600px;
+    width:100%;
+    background-image: url('../img/ribbon.png'),url('../img/about_bg.png');
+    background-repeat: repeat-x,repeat;
+    background-position: bottom left,top left;
+    border-bottom:2px solid #444;
+}
+.aboutHeader {
+    color:#efefef;
+    text-shadow:0 -2px 1px rgba(68,68,68,0.5);
+}
+.aboutMap {
+    width:400px;
+    height:300px;
+    display:block;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px rgba(68,68,68,0.5);
+    background:#fff;
+}
+.aboutText {
+    color:#efefef;
+    font-size:14px;
+}
+.aboutText .viewport { width:430px; height: 400px; overflow: hidden; display:block;position: relative; }
+.aboutText .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+.aboutText .scrollbar{display:block;background-color:#444; position: relative; background-position: 0 0; float: right; width: 15px; }
+.aboutText .track { background-color:#fff; height: 100%; width:15px; position: relative;border-radius:7px;}
+.aboutText .thumb { background-color:transparent; height: 20px; width: 15px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
+.aboutText .thumb .end { background-color:#323232; overflow: hidden; height: 5px; width: 25px; }
 
+/**FOOTER**/
+.footer {
+    width:100%;
+    height:80px;
+    display: block;
+    background-color: #0a0a0a;
 }
