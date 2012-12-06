@@ -17,6 +17,18 @@
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<script type='text/javascript'>
+	(function() {
+		window.___fourSq = {"uid":"606"};
+		var s = document.createElement('script');
+		s.type = 'text/javascript';
+		s.src = 'http://platform.foursquare.com/js/widgets.js';
+		s.async = true;
+		var ph = document.getElementsByTagName('script')[0];
+		ph.parentNode.insertBefore(s, ph);
+	})();
+</script>
+
 <div class="headerLeft boxBottomShadow">
 
 	<div class="socPlugins">
@@ -206,21 +218,73 @@
 			</div>
 			<div class="friendsPanel">
 				<div class="friendsButtonPanel right40">
-					<div class="friendsIcon friend_twitter">
+					<div class="friendsIcon friend_twitter" onclick="lcc.getTwitter();">
 
 					</div>
-					<div class="friendsIcon friend_facebook">
+					<div class="friendsIcon friend_facebook" onclick="lcc.getFacebook();">
 
 					</div>
-					<div class="friendsIcon">
+					<div class="friendsIcon friend_yelp" onclick="lcc.getYelp();">
 
 					</div>
 				</div>
 				<div class="friendsContentPanel">
+					<div class="friendsContent contentYp"></div>
+					<div class="friendsContent contentTw">
 
+						<a class="twitter-timeline"  href="https://twitter.com/prostvlyesh" data-widget-id="276652778435264512">Tweets by @prostvlyesh</a>
+
+						<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+						<div class="viewport">
+							<div class="overview">
+								<script src="http://widgets.twimg.com/j/2/widget.js" language="javascript" type="text/javascript"></script>
+								<script language="javascript" type="text/javascript">
+									new TWTR.Widget({
+										version: 2,
+										type: 'profile',
+										rpp: 20,
+										interval: 6000,
+										width: 530,
+										height:600,
+										theme: {
+											shell: {
+												background: 'transparent',
+												color: '#efefef'
+											},
+											tweets: {
+												background: 'transparent',
+												color: '#efefef',
+												links: '#F1A11E'
+											}
+										},
+										features: {
+											scrollbar: false,
+											loop: true,
+											live: false,
+											hashtags: true,
+											timestamp: true,
+											avatars: true,
+											behavior: 'all'
+										}
+									}).render().setUser('londoncandyco').start();
+
+								</script>
+							</div>
+						</div>
+
+					</div>
+					<div class="friendsContent contentFb">
+						<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+						<div class="viewport">
+							<div class="overview">
+									<div class="fb-comments" data-href="http://thelondoncandycompany.com" data-width="560" data-num-posts="10" data-colorscheme="dark"></div>
+							</div>
+						</div>
+					</div>
+					<div class="friendsContent contentFq"></div>
 				</div>
 				<div class="friendsButtonPanel left40">
-					<div class="friendsIcon">
+					<div class="friendsIcon friend_foursquare" onclick="lcc.getFoursquare();">
 
 					</div>
 					<div class="friendsIcon">
