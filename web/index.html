@@ -26,19 +26,11 @@
 	</div>
 </div>
 <div class="kcec"></div>
-<div class="pennant boxBottomShadow">
+<div class="pennant boxBottomShadow" onclick="lcc.goToByScroll('overview');">
 	<div class="lcc_logo_80">
 	</div>
 	<div class="lcc_caption">
 		the boutique british confectioner
-	</div>
-	<div class="lcc_socIcons" style="display:none;">
-		<div class="lcc_icon lcc_fb"></div>
-		<div class="lcc_icon lcc_tw"></div>
-		<div class="lcc_icon lcc_em"></div>
-		<div class="lcc_icon lcc_yp"></div>
-		<div class="lcc_icon lcc_fs"></div>
-		<div class="lcc_icon lcc_fl"></div>
 	</div>
 </div>
 <div class="leftPennant"></div>
@@ -46,33 +38,32 @@
 
 <div class="headerRight boxBottomShadow">
 
-	<div class="menuItem right40 menuAboutUs">
+	<div class="menuItem right40 menuAboutUs" onclick="lcc.goToByScroll('aboutBg');">
 		about
 	</div>
-	<div class="menuItem menuFriends">
+	<div class="menuItem menuFriends" onclick="lcc.goToByScroll('friendsBg');">
 		friends
 	</div>
-	<div class="menuItem menuFun">
+	<div class="menuItem menuFun" onclick="lcc.goToByScroll('funfactsBg');">
 		fun
 	</div>
-	<div class="menuItem menuEvents">
+	<div class="menuItem menuEvents" onclick="lcc.goToByScroll('eventsBg');">
 		events
 	</div>
-	<div class="menuItem menuDrinks">
+	<div class="menuItem menuDrinks" onclick="lcc.goToByScroll('drinksBg');">
 		drinks/snacks
 	</div>
-	<div class="menuItem menuCandy">
+	<div class="menuItem menuCandy" onclick="lcc.goToByScroll('candyBg');">
 		candy
 	</div>
 </div>
 
 <div class="main">
 	<div class="box gallery">
-		<div class="galleryCaption">
-			1442 Lexington Avenue (E94th & 3rd)<br/>
-			New York NY 10128<br/>
-
-		</div>
+			<div class="galleryImg">
+			</div>
+			<div class="galleryCaption">
+			</div>
 	</div>
 	<div class="box candy candyBg">
 		<div class="boxPanel">
@@ -188,35 +179,21 @@
 		<div class="boxPanel">
 			<div class="funfactsDialler">
 				<div class="funfactsDiallerCenter"></div>
-				<div class="funfaceNumberActive funfactOne">1</div>
-				<div class="funfactNumber funfactSix">6</div>
-				<div class="funfactNumber funfactTwo">2</div>
-				<div class="funfactNumber funfactTen">10</div>
-				<div class="funfactNumber funfactFive">5</div>
-				<div class="funfactNumber funfactSeven">7</div>
-				<div class="funfactNumber funfactThree">3</div>
-				<div class="funfactNumber funfactNine">9</div>
-				<div class="funfactNumber funfactFour">4</div>
-				<div class="funfactNumber funfactEight">8</div>
+				<div class="funfactNumber funfactActive funfactOne f1" onclick="lcc.getFact(1);">1</div>
+				<div class="funfactNumber funfactSix f6" onclick="lcc.getFact(6);">6</div>
+				<div class="funfactNumber funfactTwo f2" onclick="lcc.getFact(2);">2</div>
+				<div class="funfactNumber funfactTen f10" onclick="lcc.getFact(10);">10</div>
+				<div class="funfactNumber funfactFive f5" onclick="lcc.getFact(5);">5</div>
+				<div class="funfactNumber funfactSeven f7" onclick="lcc.getFact(7);">7</div>
+				<div class="funfactNumber funfactThree f3" onclick="lcc.getFact(3);">3</div>
+				<div class="funfactNumber funfactNine f9" onclick="lcc.getFact(9);">9</div>
+				<div class="funfactNumber funfactFour f4" onclick="lcc.getFact(4);">4</div>
+				<div class="funfactNumber funfactEight f8" onclick="lcc.getFact(8);">8</div>
 			</div>
 			<div class="funfactsTextBox">
 				<h1 class="funFactsHeader">Fun Fact #1</h1>
 				<div class="funfactsText">
-					<p>
-					British candy is made with
-					20% more cocao than
-					American candy and
-					Cadburies add full
-					cream to that too!
-					</p>
-					<p>
-					this all makes for the best
-					most velvety chocolate you
-					could wish for...
-					</p>
-					<p>
-					If you want to know more, ask Howie next time you are in the store
-					</p>
+
 				</div>
 			</div>
 
@@ -258,6 +235,12 @@
 				<div class="newsPanelLeft">
 
 				</div>
+				<div class="newsPanelItems">
+
+				</div>
+				<div class="newsPanelRight">
+
+				</div>
 			</div>
 		</div>
 	</div>
@@ -265,7 +248,10 @@
 		<div class="boxPanel">
 			<div class="boxPanelLeft">
 				<h1 class="aboutHeader">About Us</h1>
-				<div id="map" class="aboutMap"></div>
+				<div class="mapWrapper">
+					<div id="map" class="aboutMap"></div>
+				</div>
+
 			</div>
 			<div class="boxPanelRight aboutText">
 				<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
@@ -283,60 +269,56 @@
 						<p>
 							The menu at The London Candy Company includes English classics like approved by-the-Queen Cadbury’s chocolates, and treats from Thorn- ton’s, Nestle’s, Terry’s and Mars. Confections like Rowntree’s Wine Gums and boiled sweets round out the selection. Rich Cadbury’s hot chocolate, Horlick’s malted milk drink, Stumptown Coffee, fresh pastries and cup- cakes ensure that there is something for everyone.
 						</p>
-
+						<p>
+							The company’s logo was developed by Freddy Lopez and is play on the flag of the United Kingdom, the Union Jack.
+						</p>
+						<p>
+							The London Candy Company held its soft launch on April 2, 2011. The April 29 grand opening was designed to coincide with England’s royal wedding.
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="footer">
+		<div class="boxPanel">
+			<div class="lcc_copy">
+				&copy The London Candy Company 2012 | design <a href="http://getmehere.com" target="_blank">getmehere</a>
+			</div>
+			<div class="lcc_socIcons">
+				<div class="lcc_icon lcc_fb">
+					<a href="https://www.facebook.com/thelondoncandyco" target="_blank" title="The London Candy Company on Facebook">&nbsp;</a>
+				</div>
+				<div class="lcc_icon lcc_tw">
+					<a href="https://twitter.com/londoncandyco" target="_blank" title="The London Candy Company on Twitter">&nbsp;</a>
+				</div>
+				<div class="lcc_icon lcc_em">
+					<a href="mailto:info@thelondoncandycompany.com" title="Email the London Candy Company">&nbsp;</a>
+				</div>
+				<div class="lcc_icon lcc_yp">
+					<a href="http://www.yelp.com/biz/the-london-candy-company-new-york" target="_blank" title="The London Candy Company on Yelp">
+						&nbsp;
+					</a>
+				</div>
+				<div class="lcc_icon lcc_fs">
+					<a href="https://foursquare.com/v/the-london-candy-co/4d974e22daec224bbe7b2c3e" target="_blank" title="The London Candy Company on Foursquare">
+						&nbsp;
+					</a>
+				</div>
+				<div class="lcc_icon lcc_fl">
 
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 </body>
-<script src="js/tinyscroll.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/tinyscroll.js"></script>
+<script type="text/javascript" src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+<script type="text/javascript" src="js/lcc.js"></script>
+
 <script>
-	$('.overview').tinyscrollbar();
-	var map;
-	function initialize() {
-		var mapOptions = {
-			zoom: 6,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-		map = new google.maps.Map(document.getElementById('map'),mapOptions);
-// Try HTML5 geolocation
-		if(navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(function(position) {
-				var pos = new google.maps.LatLng(position.coords.latitude,
-								position.coords.longitude);
-				var infowindow = new google.maps.InfoWindow({
-					map: map,
-					position: pos,
-					content: 'Location found using HTML5.'
-				});
-				map.setCenter(pos);
-			}, function() {
-				handleNoGeolocation(true);
-			});
-		} else {
-// Browser doesn't support Geolocation
-			handleNoGeolocation(false);
-		}
-	}
-	function handleNoGeolocation(errorFlag) {
-		if (errorFlag) {
-			var content = 'Error: The Geolocation service failed.';
-		} else {
-			var content = 'Error: Your browser doesn\'t support geolocation.';
-		}
-		var options = {
-			map: map,
-			position: new google.maps.LatLng(60, 105),
-			content: content
-		};
-		var infowindow = new google.maps.InfoWindow(options);
-		map.setCenter(options.position);
-	}
-	google.maps.event.addDomListener(window, 'load', initialize);
+	lcc.initialize();
 </script>
 </html>
