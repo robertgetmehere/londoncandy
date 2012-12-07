@@ -5,7 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="css/lcc.css"/>
 	<title>The London Candy Company</title>
 </head>
+
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+<script src="//assets.pinterest.com/js/pinit.js"></script>
 <body>
 
 <div id="fb-root"></div>
@@ -16,18 +18,6 @@
 	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=372812332809836";
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
-<script type='text/javascript'>
-	(function() {
-		window.___fourSq = {"uid":"606"};
-		var s = document.createElement('script');
-		s.type = 'text/javascript';
-		s.src = 'http://platform.foursquare.com/js/widgets.js';
-		s.async = true;
-		var ph = document.getElementsByTagName('script')[0];
-		ph.parentNode.insertBefore(s, ph);
-	})();
-</script>
 
 <div class="headerLeft boxBottomShadow">
 
@@ -282,12 +272,15 @@
 						</div>
 					</div>
 					<div class="friendsContent contentFq"></div>
+					<div class="friendsContent contentPt">
+						<a data-pin-do="embedBoard" href="http://pinterest.com/pinterest/pin-pets/"></a>
+					</div>
 				</div>
 				<div class="friendsButtonPanel left40">
 					<div class="friendsIcon friend_foursquare" onclick="lcc.getFoursquare();">
 
 					</div>
-					<div class="friendsIcon">
+					<div class="friendsIcon friend_pinterest" onclick="lcc.getPinterest();">
 
 					</div>
 					<div class="friendsIcon">
@@ -315,7 +308,7 @@
 				<div class="mapWrapper">
 					<div id="map" class="aboutMap"></div>
 				</div>
-
+				<div class="aboutAddress">1442 Lexington Ave, New York, NY 10128 | (212) 427-2129</div>
 			</div>
 			<div class="boxPanelRight aboutText">
 				<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>

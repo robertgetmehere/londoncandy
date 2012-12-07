@@ -32,7 +32,6 @@ h1
 .headerRight {
     display:block;
     position:fixed;
-    width:61%;
     z-index:100;
     height:60px;
     font-size:18px;
@@ -220,6 +219,7 @@ h1
     position: relative;
     z-index:0;
     width:100%;
+    background-color:#232323;
     box-shadow: 0 -4px 2px rgba(68,68,68,0.5);
 }
 .galleryCaption
@@ -229,11 +229,20 @@ h1
     line-height: 42px;
     display:block;
     position:absolute;
-    top:440px;
+    top:380px;
+    width:800px;
     left:200px;
     z-index:20;
+    font-style:italic;
     color:#fff;
-    text-shadow:0 -2px 1px rgba(68,68,68,0.5);
+    text-shadow:0 -2px 1px rgba(68,68,68,0.95);
+}
+.galleryQuote {
+    font-size:24px;
+    line-height: 42px;
+    margin-right:20px;
+    font-style:normal;
+    text-shadow:0 -2px 1px rgba(68,68,68,0.85);
 }
 .candy
 {
@@ -268,7 +277,7 @@ h1
     border:1px solid #999;
     left:100px;
     top:140px;
-    background-image: url('../img/andy_murray.png');
+    background-image: url('../img/andy_murray.jpg');
     background-repeat: no-repeat;
     background-size: auto auto;
 }
@@ -292,19 +301,19 @@ h1
 .smallCircTwo {
     left:290px;
     top:-380px;
-    background-image: url('../img/circle_pic_one.png');
+    background-image: url('../img/circle_pic_four.png');
     box-shadow: inset 1px 1px 2px rgba(120,120,120,0.5);
 }
 .smallCircThree {
     left:0px;
     top:-120px;
-    background-image: url('../img/circle_pic_one.png');
+    background-image: url('../img/circle_pic_three.png');
     box-shadow: inset 1px 1px 2px rgba(239,239,239,0.5);
 }
 .smallCircFour {
     left:260px;
     top:-220px;
-    background-image: url('../img/circle_pic_one.png');
+    background-image: url('../img/circle_pic_two.png');
     box-shadow: inset 1px 1px 2px rgba(239,239,239,0.5);
 }
 /** DRINKS STYLING **/
@@ -579,6 +588,11 @@ h1
     display:none;
     color:#efefef;
 }
+.contentPt {
+    width:488px;
+    display:block;
+    padding:0 18px 0 18px;
+}
 .friendsContent .contentTw .viewport { width:530px; height: 320px; overflow: hidden; display:block;position: relative; }
 .friendsContent .contentTw .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
 .friendsContent .contentTw .scrollbar{display:block;background-color:transparent; position: relative; background-position: 0 0; float: right; width: 20px; }
@@ -644,6 +658,11 @@ h1
 }
 .friend_foursquare {
     background-image: url('../img/grey_foursquare.png');
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+.friend_pinterest {
+    background-image: url('../img/grey_pinterest.png');
     background-position:center center;
     background-repeat: no-repeat;
 }
@@ -718,7 +737,7 @@ h1
 }
 .mapWrapper {
     width:400px;
-    height:300px;
+    height:270px;
     display:block;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -731,10 +750,18 @@ h1
 }
 .aboutMap {
     width:400px;
-    height:300px;
+    height:270px;
     display:block;
     position:relative;
     z-index: 0;
+}
+.aboutAddress {
+    width:400px;
+    height:20px;
+    color:#efefef;
+    font-size:14px;
+    display:block;
+    padding-top:20px;
 }
 .aboutText {
     color:#efefef;
@@ -878,3 +905,4 @@ h1
     color:rgba(241,161,30,0.85);
     font-size:11px;
 }
+/**PINTEREST STYPING**/

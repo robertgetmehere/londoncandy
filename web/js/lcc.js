@@ -30,18 +30,32 @@ var facts = [ {
     }
 ];
 var photos = [ {
-        "title" : "welcome to our store",
+        "title" : "&quot;For sweets that are simply smashing, English expats and local sugar fiends head to this 'cheerful' UES British candy emporium&quot;<br/><span class='galleryQuote'> - Zagat 2012</span>",
         "image" : "img/gallery/g1.jpg",
-        "scaleToFit": 1
+        "scaleToFit": 1,
+        "color" : '#993333'
     }, {
-        "title" : "where your sure of a smile",
+        "title" : "&quot;Cool theme.  Candy from London.  Tried a coffee drink here, and like it.  Stores like this are fun!!&quot;<br/><span class='galleryQuote'> - Richard S.</span>",
         "image" : "img/gallery/g2.jpg",
         "scaleToFit" : 0
     }, {
-        "title" : "and can send to a friend",
+        "title" : "&quot;This is a yummy fun candy store. All the items sold are from England. Their coffee is delicious as is their Earl Grey Tea&quot;<br/><span class='galleryQuote'> - Jamiee A</span>",
         "image" : "img/gallery/g3.jpg",
         "scaleToFit" : 0
+    },{
+        "title" : "&quot;I would recommend coming here for coffee&quot;<br/><span class='galleryQuote'> - Marley N</span>",
+        "image" : "img/gallery/g4.jpg",
+        "scaleToFit" : 0
+    },{
+        "title" : "&quot;I seized the opportunity to find a candy I've been constantly searhcing for...&quot;<br/><span class='galleryQuote'> - Lauren R</span>",
+        "image" : "img/gallery/g5.jpg",
+        "scaleToFit" : 1
+    },{
+        "title" : "I adore this place great atmosphere, fabulous english candy and items&quot;<br/><span class='galleryQuote'> - Zagat Review</span>",
+        "image" : "img/gallery/g6.jpg",
+        "scaleToFit" : 1
     }
+
 ];
 //USE pictures from CD #s 8,11,12
 var lcc = {
@@ -58,6 +72,24 @@ var lcc = {
         this.loadMap();
         this.loadTwitter();
         this.loadYelp();
+        this.dimensions = this.screenSize();
+        this.middle = this.screenCenter();
+        if (this.dimensions.width < 1200) {
+            $('.socPlugins').hide();
+            $('.pennant').css('left',50);
+            $('.leftPennant').css('left',50);
+            $('.rightPennant').css('left',200);
+            $('.headerRight').css('left',350);
+            $('.headerRight').css('width',this.dimensions.width - 350);
+        } else {
+            $('.socPlugins').show();
+            $('.pennant').css('left',200);
+            $('.leftPennant').css('left',200);
+            $('.rightPennant').css('left',350);
+            $('.headerRight').css('left',500);
+            $('.headerRight').css('width',this.dimensions.width - 500);
+        }
+
     },
     loadMap: function() {
         geocoder = new google.maps.Geocoder();
@@ -90,7 +122,7 @@ var lcc = {
     showBgGallery: function(){
         this.showInterval = setInterval(function(){
             lcc.nextImage();
-        },4000);
+        },7000);
     },
     nextImage: function(){
         if (this.currentImage < photos.length) {
@@ -101,6 +133,10 @@ var lcc = {
                 var scaling = (photos[lcc.currentImage].scaleToFit == 1) ? {prop: "background-size", val: "100% 100%"} : {prop: "background-size", val: "100% auto"};
                 $('.galleryImg').css('background-image','url(\'' + window.location.href + photos[lcc.currentImage].image + '\')').css(scaling.prop , scaling.val).fadeIn(1000,"swing",function(){
                     $('.galleryCaption').html(photos[lcc.currentImage].title).fadeIn();
+                    if (typeof photos[lcc.currentImage].color != 'undefined') {
+                        $('.galleryCaption').css('color',photos[lcc.currentImage].color);
+                        alert(photos[lcc.currentImage].color);
+                    }
                     lcc.currentImage++;
                 });
             });
@@ -175,10 +211,12 @@ var lcc = {
         $('.friend_twitter').addClass('friendsIconActive');
         $('.friend_facebook').removeClass('friendsIconActive');
         $('.friend_yelp').removeClass('friendsIconActive');
+        $('.friend_pinterest').removeClass('friendsIconActive');
         $('.friend_foursquare').removeClass('friendsIconActive');
         $('.contentFb').hide();
         $('.contentYp').hide();
         $('.contentFq').hide();
+        $('.contentPt').hide();
         $('.contentTw').fadeIn();
         $('.friendsContent .contentTw').tinyscrollbar();
     },
@@ -186,40 +224,60 @@ var lcc = {
         $('.friend_twitter').removeClass('friendsIconActive');
         $('.friend_yelp').removeClass('friendsIconActive');
         $('.friend_facebook').addClass('friendsIconActive');
+        $('.friend_pinterest').removeClass('friendsIconActive');
         $('.friend_foursquare').removeClass('friendsIconActive');
         $('.contentTw').hide();
         $('.contentYp').hide();
         $('.contentFq').hide();
+        $('.contentPt').hide();
         $('.contentFb').fadeIn();
     },
     getYelp: function() {
         $('.friend_twitter').removeClass('friendsIconActive');
         $('.friend_facebook').removeClass('friendsIconActive');
         $('.friend_foursquare').removeClass('friendsIconActive');
+        $('.friend_pinterest').removeClass('friendsIconActive');
         $('.friend_yelp').addClass('friendsIconActive');
         $('.contentFb').hide();
         $('.contentTw').hide();
         $('.contentFq').hide();
+        $('.contentPt').hide();
         $('.contentYp').fadeIn();
     },
     getFoursquare: function() {
         $('.friend_twitter').removeClass('friendsIconActive');
         $('.friend_facebook').removeClass('friendsIconActive');
         $('.friend_yelp').removeClass('friendsIconActive');
+        $('.friend_pinterest').removeClass('friendsIconActive');
         $('.friend_foursquare').addClass('friendsIconActive');
         $('.contentFb').hide();
         $('.contentTw').hide();
         $('.contentYp').hide();
+        $('.contentPt').hide();
         $('.contentFq').fadeIn();
     },
+    getPinterest: function() {
+        $('.friend_twitter').removeClass('friendsIconActive');
+        $('.friend_facebook').removeClass('friendsIconActive');
+        $('.friend_yelp').removeClass('friendsIconActive');
+        $('.friend_foursquare').removeClass('friendsIconActive');
+        $('.friend_pinterest').addClass('friendsIconActive');
+        $('.contentFb').hide();
+        $('.contentTw').hide();
+        $('.contentYp').hide();
+        $('.contentFq').hide();
+        $('.contentPt').fadeIn();
+    },
     loadYelp: function() {
-        var url = encodeURI('http://api.yelp.com/business_review_search?callback=lcc.yelpPreview&term=candy&location=1442 Lexington Avenue, NYC, NY 10128&ywsid=tkjWgMTX5_EMbWFFKdA49g');
-        //var url = encodeURI('http://api.yelp.com/v2/business/characters-nyc-new-york');
-        var script = document.createElement('script');
-        script.src = url;
-        script.type = 'text/javascript';
-        var head = document.getElementsByTagName('head').item(0);
-        head.appendChild(script);
+        (function () {
+            var url = encodeURI('http://api.yelp.com/business_review_search?callback=lcc.yelpPreview&term=candy&location=1442 Lexington Avenue, NYC, NY 10128&ywsid=tkjWgMTX5_EMbWFFKdA49g');
+            //var url = encodeURI('http://api.yelp.com/v2/business/characters-nyc-new-york');
+            var script = document.createElement('script');
+            script.src = url;
+            script.type = 'text/javascript';
+            var head = document.getElementsByTagName('head').item(0);
+            head.appendChild(script);
+        })();
     },
     yelpPreview:function(data) {
         if (data.message.text == "OK") {
@@ -235,6 +293,41 @@ var lcc = {
                 }
             }
         }
+    },
+
+    screenSize: function(){
+        var w = 0;var h = 0;
+        //IE
+        if(!window.innerWidth){
+            if(!(document.documentElement.clientWidth == 0)){
+                //strict mode
+                w = document.documentElement.clientWidth;h = document.documentElement.clientHeight;
+            } else{
+                //quirks mode
+                w = document.body.clientWidth;h = document.body.clientHeight;
+            }
+        } else {
+            //w3c
+            w = window.innerWidth;h = window.innerHeight;
+        }
+        return {width:w,height:h};
+    },
+    screenCenter: function(){
+        var hWnd = (arguments[0] != null) ? arguments[0] : {width:0,height:0};
+        var _x = 0;var _y = 0;var offsetX = 0;var offsetY = 0;
+        //IE
+        if(!window.pageYOffset){
+            //strict mode
+            if(!(document.documentElement.scrollTop == 0)){offsetY = document.documentElement.scrollTop;offsetX = document.documentElement.scrollLeft;}
+            //quirks mode
+            else{offsetY = document.body.scrollTop;offsetX = document.body.scrollLeft;}}
+            //w3c
+        else    {
+            offsetX = window.pageXOffset;
+            offsetY = window.pageYOffset;
+        }
+        _x = ((this.screenSize().width-hWnd.width)/2)+offsetX;_y = ((this.screenSize().height-hWnd.height)/2)+offsetY;
+        return{x:_x,y:_y};
     }
 }
 
