@@ -47,7 +47,7 @@ var photos = [ {
         "image" : "img/gallery/g4.jpg",
         "scaleToFit" : 0
     },{
-        "title" : "&quot;I seized the opportunity to find a candy I've been constantly searhcing for...&quot;<br/><span class='galleryQuote'> - Lauren R</span>",
+        "title" : "&quot;I seized the opportunity to find a candy I've been constantly searching for...&quot;<br/><span class='galleryQuote'> - Lauren R</span>",
         "image" : "img/gallery/g5.jpg",
         "scaleToFit" : 0
     },{
@@ -252,7 +252,13 @@ var lcc = {
             }
             if (scrolltop > 2400 && scrolltop < 3050) {
                 //viewer is in facts
+
                 if (lcc.visit.facts == 0) {lcc.visit.facts=1;_gaq.push(['_trackEvent', 'scroll', 'facts', new Date().toUTCString()]);}
+            }
+            if (scrolltop > 2850 && scrolltop < 3500) {
+                //$('.kcec').css('background-color','#ca4040');
+            } else {
+                //$('.kcec').css('background-color','#3D60A9');
             }
             if (scrolltop > 3050 && scrolltop < 3700) {
                 //viewer is in friends

@@ -112,6 +112,13 @@ h1
     -khtml-opacity: 0.95;
     opacity: 0.95;
 }
+.opacity85 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+    filter: alpha(opacity=85);
+    -moz-opacity: 0.85;
+    -khtml-opacity: 0.85;
+    opacity: 0.85;
+}
 .boxBottomShadow
 {
     box-shadow: 2px 2px 2px rgba(68,68,68,0.5);
@@ -215,6 +222,7 @@ h1
 .gallery {
     height:600px;
     box-shadow: 0 -4px 2px rgba(68,68,68,0.5);
+    background-color:#232323;
 }
 .galleryImg {
     background-image:url('../img/gallery/g1.jpg');
