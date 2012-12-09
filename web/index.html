@@ -2,12 +2,30 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="UTF-8">
+	<meta name="keywords" content="candy,coffee,UES,upper east side,10128,british,london,"/>
+	<meta name="description" content="The London Candy Company"/>
+	<meta content="The London Candy Company" property="og:title">
+	<meta content="knitting design" property="og:type">
+	<meta content="http://localhost:8080/img/fbpic.png" property="og:image">
+	<meta content="http://thelondoncandycompany.com" property="og:url">
+
 	<link rel="stylesheet" type="text/css" href="css/lcc.css"/>
 	<title>The London Candy Company</title>
 </head>
+<script type="text/javascript">
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
-<script src="//assets.pinterest.com/js/pinit.js"></script>
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-13217157-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+
 <body>
 
 <div id="fb-root"></div>
@@ -40,22 +58,22 @@
 
 <div class="headerRight boxBottomShadow">
 
-	<div class="menuItem right40 menuAboutUs" onclick="lcc.goToByScroll('aboutBg');">
+	<div class="menuItem right40 menuAboutUs" onclick="lcc.goToByScroll('aboutBg');_gaq.push(['_trackEvent', 'click', 'menu', 'about']);">
 		about
 	</div>
-	<div class="menuItem menuFriends" onclick="lcc.goToByScroll('friendsBg');">
+	<div class="menuItem menuFriends" onclick="lcc.goToByScroll('friendsBg');_gaq.push(['_trackEvent', 'click', 'menu', 'friends']);">
 		friends
 	</div>
-	<div class="menuItem menuFun" onclick="lcc.goToByScroll('funfactsBg');">
+	<div class="menuItem menuFun" onclick="lcc.goToByScroll('funfactsBg');_gaq.push(['_trackEvent', 'click', 'menu', 'facts']);">
 		fun
 	</div>
-	<div class="menuItem menuEvents" onclick="lcc.goToByScroll('eventsBg');">
+	<div class="menuItem menuEvents" onclick="lcc.goToByScroll('eventsBg');_gaq.push(['_trackEvent', 'click', 'menu', 'events']);">
 		events
 	</div>
-	<div class="menuItem menuDrinks" onclick="lcc.goToByScroll('drinksBg');">
+	<div class="menuItem menuDrinks" onclick="lcc.goToByScroll('drinksBg');_gaq.push(['_trackEvent', 'click', 'menu', 'drinks']);">
 		drinks/snacks
 	</div>
-	<div class="menuItem menuCandy" onclick="lcc.goToByScroll('candyBg');">
+	<div class="menuItem menuCandy" onclick="lcc.goToByScroll('candyBg');_gaq.push(['_trackEvent', 'click', 'menu', 'candy']);">
 		candy
 	</div>
 </div>
@@ -219,14 +237,19 @@
 					</div>
 				</div>
 				<div class="friendsContentPanel">
-					<div class="friendsContent contentYp"></div>
-					<div class="friendsContent contentTw">
 
-						<a class="twitter-timeline"  href="https://twitter.com/prostvlyesh" data-widget-id="276652778435264512">Tweets by @prostvlyesh</a>
-
+					<div id="ypCont" class="friendsContent contentYp">
 						<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
 						<div class="viewport">
 							<div class="overview">
+							</div>
+						</div>
+					</div>
+					<div id="twCont" class="friendsContent contentTw">
+						<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+						<div class="viewport">
+							<div class="overview">
+								<a class="twitter-timeline"  href="https://twitter.com/prostvlyesh" data-widget-id="276652778435264512">Tweets by @prostvlyesh</a>
 								<script src="http://widgets.twimg.com/j/2/widget.js" language="javascript" type="text/javascript"></script>
 								<script language="javascript" type="text/javascript">
 									new TWTR.Widget({
@@ -263,15 +286,24 @@
 						</div>
 
 					</div>
-					<div class="friendsContent contentFb">
+
+					<div id="fbCont" class="friendsContent contentFb">
 						<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
 						<div class="viewport">
 							<div class="overview">
-									<div class="fb-comments" data-href="http://thelondoncandycompany.com" data-width="560" data-num-posts="10" data-colorscheme="dark"></div>
+									<div class="fb-comments" data-href="http://thelondoncandycompany.com" data-width="520" data-num-posts="10" data-colorscheme="dark"></div>
 							</div>
 						</div>
 					</div>
-					<div class="friendsContent contentFq"></div>
+
+					<div id="fqCont" class="friendsContent contentFq">
+						<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+						<div class="viewport">
+							<div class="overview">
+							</div>
+						</div>
+					</div>
+
 					<div class="friendsContent contentPt">
 						<a data-pin-do="embedBoard" href="http://pinterest.com/pinterest/pin-pets/"></a>
 					</div>
@@ -289,14 +321,18 @@
 				</div>
 			</div>
 			<div class="newsPanel">
-				<div class="newsPanelLeft">
-
-				</div>
 				<div class="newsPanelItems">
-
-				</div>
-				<div class="newsPanelRight">
-
+					<ul id="scroller">
+						<li><a class="today"></a></li>
+						<li><a class="nyt"></a></li>
+						<li><a class="favandco"></a></li>
+						<li><a class="ny1"></a></li>
+						<li><a class="vvoice"></a></li>
+						<li><a class="dnainfo"></a></li>
+						<li><a class="bbcamerica"></a></li>
+						<li><a class="nyorker"></a></li>
+						<li><a class="nyp"></a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -308,17 +344,23 @@
 				<div class="mapWrapper">
 					<div id="map" class="aboutMap"></div>
 				</div>
-				<div class="aboutAddress">1442 Lexington Ave, New York, NY 10128 | (212) 427-2129</div>
+				<div class="aboutAddress">
+					1442 Lexington Ave, New York, NY 10128 | (212) 427-2129
+					<br/>
+					Mo/Tu 7am-9pm | We-Fr 7am-10pm
+					<br/>
+					Sa 8:30am-10pm | Su 8:30am-9pm
+				</div>
 			</div>
 			<div class="boxPanelRight aboutText">
 				<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
 				<div class="viewport">
 					<div class="overview">
-						<p>
+						<p style="margin-top:0;padding-top:0;">
 						The London Candy Company’s Jignesh “Jigs” Patel is part of an English sweet shop dynasty that stretches back over 30 years. The Patel family’s shop in Greenford Station in London was close enough to his strict prep school that 12-year old Jigs was able to smuggle coveted sweets into school while his friends dejectedly snacked on apples and milk. Seizing a business opportunity when he saw one, Jigs sold his goods for a profit and used the money to buy completed homework assignments.
 						</p>
 						<p>
-							Jigs initially planned to make his mark in the United States with a night- life venture—he had experience as General Manager of a Chelsea hot- spot—but his American friends’ incessant requests for English sweets inspired a different path. Why not transform his juvenile delinquency into a bustling New York City business?
+							Jigs initially planned to make his mark in the United States with a night-life venture—he had experience as General Manager of a Chelsea hot-spot, but his American friends’ incessant requests for English sweets inspired a different path. Why not transform his juvenile delinquency into a bustling New York City business?
 						</p>
 						<p>
 							The idea took shape in 2010 and after scouring New York City’s neighborhood’s for the ideal storefront, Patel decided on the shop at 1442 Lexington Avenue. The space, in the landmarked building on Manhattan’s Upper East Side, features a glass storefront, coffee bar, pastry case and space for children’s and cocktail parties.
@@ -340,30 +382,27 @@
 	<div class="footer">
 		<div class="boxPanel">
 			<div class="lcc_copy">
-				&copy The London Candy Company 2012 | design <a href="http://getmehere.com" target="_blank">getmehere</a>
+				&copy; The London Candy Company 2012 | design <a href="http://getmehere.com" target="_blank">getmehere</a>
 			</div>
 			<div class="lcc_socIcons">
 				<div class="lcc_icon lcc_fb">
-					<a href="https://www.facebook.com/thelondoncandyco" target="_blank" title="The London Candy Company on Facebook">&nbsp;</a>
+					<a onclick="_gaq.push(['_trackEvent', 'click', 'link', 'facebook']);" href="https://www.facebook.com/thelondoncandyco" target="_blank" title="The London Candy Company on Facebook">&nbsp;</a>
 				</div>
 				<div class="lcc_icon lcc_tw">
-					<a href="https://twitter.com/londoncandyco" target="_blank" title="The London Candy Company on Twitter">&nbsp;</a>
+					<a onclick="_gaq.push(['_trackEvent', 'click', 'link', 'twitter']);" href="https://twitter.com/londoncandyco" target="_blank" title="The London Candy Company on Twitter">&nbsp;</a>
 				</div>
 				<div class="lcc_icon lcc_em">
-					<a href="mailto:info@thelondoncandycompany.com" title="Email the London Candy Company">&nbsp;</a>
+					<a onclick="_gaq.push(['_trackEvent', 'click', 'link', 'email']);" href="mailto:info@thelondoncandycompany.com" title="Email the London Candy Company">&nbsp;</a>
 				</div>
 				<div class="lcc_icon lcc_yp">
-					<a href="http://www.yelp.com/biz/the-london-candy-company-new-york" target="_blank" title="The London Candy Company on Yelp">
+					<a onclick="_gaq.push(['_trackEvent', 'click', 'link', 'yelp']);" href="http://www.yelp.com/biz/the-london-candy-company-new-york" target="_blank" title="The London Candy Company on Yelp">
 						&nbsp;
 					</a>
 				</div>
 				<div class="lcc_icon lcc_fs">
-					<a href="https://foursquare.com/v/the-london-candy-co/4d974e22daec224bbe7b2c3e" target="_blank" title="The London Candy Company on Foursquare">
+					<a onclick="_gaq.push(['_trackEvent', 'click', 'link', 'foursquare']);" href="https://foursquare.com/v/the-london-candy-co/4d974e22daec224bbe7b2c3e" target="_blank" title="The London Candy Company on Foursquare">
 						&nbsp;
 					</a>
-				</div>
-				<div class="lcc_icon lcc_fl">
-
 				</div>
 			</div>
 		</div>
@@ -373,6 +412,10 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/tinyscroll.js"></script>
 <script type="text/javascript" src="http://jqueryrotate.googlecode.com/svn/trunk/jQueryRotate.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+<script src="//assets.pinterest.com/js/pinit.js"></script>
+<script src="js/jquery.simplyscroll.js"></script>
+<script src="js/foursquare-js-api.js"></script>
 <script type="text/javascript" src="js/lcc.js"></script>
 
 <script>

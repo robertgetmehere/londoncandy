@@ -37,7 +37,7 @@ var photos = [ {
     }, {
         "title" : "&quot;Cool theme.  Candy from London.  Tried a coffee drink here, and like it.  Stores like this are fun!!&quot;<br/><span class='galleryQuote'> - Richard S.</span>",
         "image" : "img/gallery/g2.jpg",
-        "scaleToFit" : 0
+        "scaleToFit" : 1
     }, {
         "title" : "&quot;This is a yummy fun candy store. All the items sold are from England. Their coffee is delicious as is their Earl Grey Tea&quot;<br/><span class='galleryQuote'> - Jamiee A</span>",
         "image" : "img/gallery/g3.jpg",
@@ -49,7 +49,7 @@ var photos = [ {
     },{
         "title" : "&quot;I seized the opportunity to find a candy I've been constantly searhcing for...&quot;<br/><span class='galleryQuote'> - Lauren R</span>",
         "image" : "img/gallery/g5.jpg",
-        "scaleToFit" : 1
+        "scaleToFit" : 0
     },{
         "title" : "I adore this place great atmosphere, fabulous english candy and items&quot;<br/><span class='galleryQuote'> - Zagat Review</span>",
         "image" : "img/gallery/g6.jpg",
@@ -74,21 +74,35 @@ var lcc = {
         this.loadYelp();
         this.dimensions = this.screenSize();
         this.middle = this.screenCenter();
+        this.curNews = 0;
         if (this.dimensions.width < 1200) {
             $('.socPlugins').hide();
             $('.pennant').css('left',50);
             $('.leftPennant').css('left',50);
-            $('.rightPennant').css('left',200);
-            $('.headerRight').css('left',350);
-            $('.headerRight').css('width',this.dimensions.width - 350);
+            $('.rightPennant').css('left',150);
+            $('.headerRight').css('left',251);
+            $('.headerRight').css('width',this.dimensions.width - 251);
+            $('.galleryCaption').css('left',50);
+            $('.lcc_socIcons').css('margin-right',50);
         } else {
             $('.socPlugins').show();
             $('.pennant').css('left',200);
             $('.leftPennant').css('left',200);
-            $('.rightPennant').css('left',350);
-            $('.headerRight').css('left',500);
-            $('.headerRight').css('width',this.dimensions.width - 500);
+            $('.rightPennant').css('left',300);
+            $('.headerRight').css('left',401);
+            $('.headerRight').css('width',this.dimensions.width - 401);
+            $('.galleryCaption').css('left',200);
+            $('.lcc_socIcons').css('margin-right',0);
         }
+        this.visit = {gallery:0,candy:0,drinks:0,events:0,facts:0,friends:0,about:0};
+
+        (function($) {
+            $(function() { //on DOM ready
+                $("#scroller").simplyScroll({speed:2});
+            });
+        })(jQuery);
+
+        this.loadFoursquare();
 
     },
     loadMap: function() {
@@ -156,6 +170,19 @@ var lcc = {
 
         }
     },
+    movePress:function(n) {
+        var news = $('.newsPanelItem');
+        var newslen = $('.newsPanelItems').css('width');
+        if (this.curNews > 0 && n==-1) {
+            this.curNews--;
+        }
+        if (this.curNews < news.length && n==1) {
+            this.curNews++;
+        }
+        for (var i=0;i<news.length;i++) {
+            if (i < this.curNews) {news[i].hide();} else {news[i].fadeIn();}
+        }
+    },
     goToByScroll: function(id){
         if (id == 'overview') {
             $('html,body').animate({scrollTop: 0},'slow');
@@ -165,7 +192,76 @@ var lcc = {
     },
     scroller: function() {
         $(window).scroll(function(e){
+            var scrolltop = $(window).scrollTop();
+            if (scrolltop < 600) {
+                //viewer is in gallery
+                if (lcc.visit.gallery == 0) {lcc.visit.gallery=1;_gaq.push(['_trackEvent', 'scroll', 'gallery', new Date().toUTCString()]);}
+            }
 
+            if (scrolltop > 300 && scrolltop < 1500) {
+                $('.smallCircOne').rotate({
+                    angle:0,
+                    animateTo:360,
+                    easing: function (x,t,b,c,d){
+                        return c*(t/d)+b;
+                    }
+                });
+                $('.smallCircTwo').rotate({
+                    angle:0,
+                    animateTo:360,
+                    easing: function (x,t,b,c,d){
+                        return c*(t/d)+b;
+                    }
+                });
+                $('.smallCircThree').rotate({
+                    angle:0,
+                    animateTo:360,
+                    easing: function (x,t,b,c,d){
+                        return c*(t/d)+b;
+                    }
+                });
+                $('.smallCircFour').rotate({
+                    angle:0,
+                    animateTo:360,
+                    easing: function (x,t,b,c,d){
+                        return c*(t/d)+b;
+                    }
+                });
+            }
+            if (scrolltop > 600 && scrolltop < 1200) {
+                //viewer is in candy
+                if (lcc.visit.candy == 0) {
+                    lcc.visit.candy=1;
+                    _gaq.push(['_trackEvent', 'scroll', 'candy', new Date().toUTCString()]);
+
+                }
+            }
+            if (scrolltop > 1200 && scrolltop < 1700) {
+                //viewer is in drinks
+                if (lcc.visit.drinks == 0) {
+                    lcc.visit.drinks=1;
+                    _gaq.push(['_trackEvent', 'scroll', 'drinks', new Date().toUTCString()]);
+
+
+                }
+
+            }
+            if (scrolltop > 1700 && scrolltop < 2400) {
+                //viewer is in events
+                if (lcc.visit.events == 0) {lcc.visit.events=1;_gaq.push(['_trackEvent', 'scroll', 'events', new Date().toUTCString()]);}
+            }
+            if (scrolltop > 2400 && scrolltop < 3050) {
+                //viewer is in facts
+                if (lcc.visit.facts == 0) {lcc.visit.facts=1;_gaq.push(['_trackEvent', 'scroll', 'facts', new Date().toUTCString()]);}
+            }
+            if (scrolltop > 3050 && scrolltop < 3700) {
+                //viewer is in friends
+                if (lcc.visit.friends == 0) {lcc.visit.friends=1;_gaq.push(['_trackEvent', 'scroll', 'friends', new Date().toUTCString()]);}
+            }
+            if (scrolltop > 3700 && scrolltop < 4300) {
+                //viewer is in about us
+                if (lcc.visit.about == 0) {lcc.visit.about=1;_gaq.push(['_trackEvent', 'scroll', 'about', new Date().toUTCString()]);}
+            }
         });
     },
 
@@ -183,6 +279,7 @@ var lcc = {
                 $('.funfactsText').html('<p>' + facts[curFact-1].factContent  + '</p>');
                 $('.funFactsHeader').fadeIn();
                 $('.funfactsText').fadeIn();
+                _gaq.push(['_trackEvent', 'click', 'fact', curFact]);
 
             } else {
                 $(this).removeClass('funfactActive');
@@ -218,7 +315,8 @@ var lcc = {
         $('.contentFq').hide();
         $('.contentPt').hide();
         $('.contentTw').fadeIn();
-        $('.friendsContent .contentTw').tinyscrollbar();
+        $('#twCont').tinyscrollbar();
+        _gaq.push(['_trackEvent', 'click', 'friends', 'twitter']);
     },
     getFacebook: function() {
         $('.friend_twitter').removeClass('friendsIconActive');
@@ -231,6 +329,7 @@ var lcc = {
         $('.contentFq').hide();
         $('.contentPt').hide();
         $('.contentFb').fadeIn();
+        _gaq.push(['_trackEvent', 'click', 'friends', 'facebook']);
     },
     getYelp: function() {
         $('.friend_twitter').removeClass('friendsIconActive');
@@ -243,6 +342,8 @@ var lcc = {
         $('.contentFq').hide();
         $('.contentPt').hide();
         $('.contentYp').fadeIn();
+        $('#ypCont').tinyscrollbar();
+        _gaq.push(['_trackEvent', 'click', 'friends', 'yelp']);
     },
     getFoursquare: function() {
         $('.friend_twitter').removeClass('friendsIconActive');
@@ -255,6 +356,8 @@ var lcc = {
         $('.contentYp').hide();
         $('.contentPt').hide();
         $('.contentFq').fadeIn();
+        $('#fqCont').tinyscrollbar();
+        _gaq.push(['_trackEvent', 'click', 'friends', 'foursquare']);
     },
     getPinterest: function() {
         $('.friend_twitter').removeClass('friendsIconActive');
@@ -267,6 +370,7 @@ var lcc = {
         $('.contentYp').hide();
         $('.contentFq').hide();
         $('.contentPt').fadeIn();
+        _gaq.push(['_trackEvent', 'click', 'friends', 'pinterest']);
     },
     loadYelp: function() {
         (function () {
@@ -281,20 +385,42 @@ var lcc = {
     },
     yelpPreview:function(data) {
         if (data.message.text == "OK") {
-            $('.contentYp').children().remove();
+            $('.contentYp .overview').children().remove();
             for (var i = 0; i < data.businesses.length; i++) {
                 var biz = data.businesses[i];
                 if (biz.name == 'The London Candy Company') {
                     for (var j = 0; j < biz.reviews.length; j++) {
                         var review = biz.reviews[j];
-                        var mHTML = '<div class="yp_review"><div class="yp_left"><div style="background-image:url(\'' + review.user_photo_url + '\');" class="yp_photo"></div><div class="yp_name">' + review.user_name + '</div></div><div class="yp_text"><span class="yp_rating">' + review.rating + ' stars...</span>' + review.text_excerpt + '<br/><span class="yp_footer">' + review.date + ' | </span><a class="yp_footer" href="' + review.url + '" target="_blank">see more on Yelp</a></div>';
-                        $('.contentYp').append(mHTML);
+                        var mHTML = '<div class="yp_review"><div class="yp_left"><div style="background-image:url(\'' + review.user_photo_url + '\');" class="yp_photo"></div><div class="yp_name">' + review.user_name + '</div></div><div class="yp_text"><span class="yp_rating">' + review.rating + ' stars...</span>' + review.text_excerpt + '</div><div class="yp_footer">' + review.date + ' | <a href="' + review.url + '" target="_blank">see more on Yelp</a></div>';
+                        $('.contentYp .overview').append(mHTML);
                     }
                 }
             }
+            $('#ypCont').tinyscrollbar();
         }
     },
+    loadFoursquare: function() {
 
+        var client = new FourSquareClient("3IB2VUI0U0VA1G2YTQPFKUU33W23ASFKDZ5Z2TDXBIOH0C55", "1SNCMNY05IGUFEO2MBXFHOX0NIUFDGUEDME5KMQWR2UTWGDX", "http://localhost:8080/", "0");
+
+        client.venuesClient.venues("4d974e22daec224bbe7b2c3e", {
+            onSuccess: function(data)
+            {
+                // do something with the response
+                // actual object data is inside: data.response
+                console.log(data);
+                $.each(data.response.venue.tips.groups[0].items,function(){
+                    var mHTML = '<div class="yp_review"><div class="yp_left"><div style="background-image:url(\'' + this.user.photo + '\');" class="yp_photo"></div><div class="yp_name">' + this.user.firstName + ' ' + this.user.lastName + '</div></div><div class="yp_text">' + this.text + '</div><div class="yp_footer">' + new Date(this.createdAt*1000).toDateString() + '</div>';
+                    $('.contentFq .overview').append(mHTML);
+                });
+            },
+            onFailure: function(data)
+            {
+                // the request failed
+                console.log(data);
+            }
+        });
+    },
     screenSize: function(){
         var w = 0;var h = 0;
         //IE

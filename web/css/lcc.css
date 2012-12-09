@@ -22,51 +22,56 @@ h1
 .headerLeft {
     display:block;
     position:fixed;
-    z-index:100;
+    z-index:5;
     width:200px;
     height:60px;
     font-size:18px;
-    background-color:#fff;
+    background-color:#3D60A9;
     top:0;
 }
 .headerRight {
     display:block;
     position:fixed;
-    z-index:100;
+    z-index:5;
     height:60px;
+    width:980px;
     font-size:18px;
-    background-color:#fff;
+    background-color:#3D60A9;
     top:0;
-    left:500px;
+    left:401px;
 }
 .pennant
 {
-    width:300px;
-    height:140px; /**85 of which is soc icons**/
+    width:201px;
+    height:100px; /**85 of which is soc icons**/
     display:block;
     position:fixed;
-    z-index:100;
+    z-index:5;
     background-color: #fff;
     top:0px;
     left:200px;
+    box-shadow:2px 0 2px rgba(68,68,68,0.5);
 }
 .leftPennant {
-    width:150px;
+    width:100px;
     position:fixed;
-    z-index:100;
-    top:140px;
+    z-index:5;
+    top:99px;
     left:200px;
-    height:52px;
+    height:40px;
     background-image: url('../img/left_pennant.png');
+    background-repeat: no-repeat;
 }
 .rightPennant {
-    width:155px;
+    width:103px;
     position:fixed;
-    z-index:100;
-    top:140px;
-    left:350px;
-    height:52px;
+    z-index:5;
+    top:99px;
+    left:300px;
+    height:40px;
     background-image: url('../img/right_pennant.png');
+    background-repeat: no-repeat;
+    background-position: top left;
 }
 .socPlugins
 {
@@ -77,19 +82,20 @@ h1
 .menuItem
 {
     height:20px;
-    line-height:23px;
+    line-height:20px;
     padding:20px;
     min-width:60px;
     text-align: center;
     display:block;
     float:right;
     cursor:pointer;
-    border-left:1px solid #fff;
-    border-right:1px solid #fff;
+    border-left:1px solid #3D60A9;
+    border-right:1px solid #3D60A9;
+    color:#fff;
 }
 .menuItem:hover{
-    background-color:rgba(204,0,51,0.5);
-    color:#efefef;
+    background-color:rgba(239,239,239,0.5);
+    color:#323232;
     border-left:1px solid #5457A2;
     border-right:1px solid #5457A2;
 }
@@ -121,9 +127,9 @@ h1
     overflow:hidden;
 }
 .lcc_logo_80 {
-    height:80px;
-    width:270px;
-    margin:20px 0 0 20px;
+    height:60px;
+    width:160px;
+    margin:10px 0 0 20px;
     display: block;
     background-image: url('../img/lcc_logo.png');
     background-position: top left;
@@ -132,11 +138,12 @@ h1
 }
 .lcc_caption {
     font-size:12px;
-    width:100%;
+    width:202px;
+    background-color:transparent;
     text-align:center;
     line-height:16px;
     display:block;
-    margin:10px 0;
+    margin:5px 0;
     cursor:pointer;
 }
 
@@ -593,11 +600,11 @@ h1
     display:block;
     padding:0 18px 0 18px;
 }
-.friendsContent .contentTw .viewport { width:530px; height: 320px; overflow: hidden; display:block;position: relative; }
-.friendsContent .contentTw .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
-.friendsContent .contentTw .scrollbar{display:block;background-color:transparent; position: relative; background-position: 0 0; float: right; width: 20px; }
-.friendsContent .contentTw .track { background-color:transparent; height: 100%; width:15px; position: relative;border-radius:7px;}
-.friendsContent .contentTw .thumb { background-color:rgba(241,161,30,1.0); height: 40px;
+#twCont .viewport { width:530px; height: 320px; overflow: hidden; display:block;position: relative; }
+#twCont .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+#twCont .scrollbar{display:block;background-color:transparent; position: relative; background-position: 0 0; float: right; width: 20px; }
+#twCont .track { background-color:transparent; height: 100%; width:15px; position: relative;border-radius:7px;}
+#twCont .thumb { background-color:rgba(241,161,30,1.0); height: 40px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -608,13 +615,13 @@ h1
     opacity: 0.65;
     box-shadow: inset 1px 1px 1px rgba(68,68,68,0.75);
     width: 15px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
-.friendsContent .contentTw .thumb .end { background-color:transparent; overflow: hidden; height: 5px; width: 25px; }
+#twCont .thumb .end { background-color:transparent; overflow: hidden; height: 5px; width: 25px; }
 
-.friendsContent .contentFb .viewport { width:530px; height: 320px; overflow: hidden; display:block;position: relative; }
-.friendsContent .contentFb .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
-.friendsContent .contentFb .scrollbar{display:block;background-color:transparent; position: relative; background-position: 0 0; float: right; width: 20px; }
-.friendsContent .contentFb .track { background-color:transparent; height: 100%; width:15px; position: relative;border-radius:7px;}
-.friendsContent .contentFb .thumb { background-color:rgba(241,161,30,1.0); height: 40px;
+#fbCont .viewport { width:530px; height: 320px; overflow: hidden; display:block;position: relative; }
+#fbCont .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+#fbCont .scrollbar{display:block;background-color:transparent; position: relative; background-position: 0 0; float: right; width: 20px; }
+#fbCont .track { background-color:transparent; height: 100%; width:15px; position: relative;border-radius:7px;}
+#fbCont .thumb { background-color:rgba(241,161,30,1.0); height: 40px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -625,8 +632,41 @@ h1
     opacity: 0.65;
     box-shadow: inset 1px 1px 1px rgba(68,68,68,0.75);
     width: 15px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
-.friendsContent .contentFb .thumb .end { background-color:transparent; overflow: hidden; height: 5px; width: 25px; }
+#fbCont .thumb .end { background-color:transparent; overflow: hidden; height: 5px; width: 25px; }
 
+#fqCont .viewport { width:530px; height: 320px; overflow: hidden; display:block;position: relative; }
+#fqCont .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+#fqCont .scrollbar{display:block;background-color:transparent; position: relative; background-position: 0 0; float: right; width: 20px; }
+#fqCont .track { background-color:transparent; height: 100%; width:15px; position: relative;border-radius:7px;}
+#fqCont .thumb { background-color:rgba(241,161,30,1.0); height: 40px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
+    filter: alpha(opacity=65);
+    -moz-opacity: 0.65;
+    -khtml-opacity: 0.65;
+    opacity: 0.65;
+    box-shadow: inset 1px 1px 1px rgba(68,68,68,0.75);
+    width: 15px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
+#fqCont .thumb .end { background-color:transparent; overflow: hidden; height: 5px; width: 25px; }
+
+#ypCont .viewport { width:530px; height: 320px; overflow: hidden; display:block;position: relative; }
+#ypCont .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+#ypCont .scrollbar{display:block;background-color:transparent; position: relative; background-position: 0 0; float: right; width: 20px; }
+#ypCont .track { background-color:transparent; height: 100%; width:15px; position: relative;border-radius:7px;}
+#ypCont .thumb { background-color:rgba(241,161,30,1.0); height: 40px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
+    filter: alpha(opacity=65);
+    -moz-opacity: 0.65;
+    -khtml-opacity: 0.65;
+    opacity: 0.65;
+    box-shadow: inset 1px 1px 1px rgba(68,68,68,0.75);
+    width: 15px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
+#ypCont .thumb .end { background-color:transparent; overflow: hidden; height: 5px; width: 25px; }
 
 .friendsIcon {
     width:80px;
@@ -683,44 +723,11 @@ h1
     background-repeat: no-repeat;
     cursor:pointer;
 }
-.newsPanelLeft:hover {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
-    filter: alpha(opacity=65);
-    -moz-opacity: 0.65;
-    -khtml-opacity: 0.65;
-    opacity: 0.65;
-    background-color:#333366;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-}
-.newsPanelItems {
-    width:700px;
-    height:100px;
-    display: block;
-    float:left;
-}
-.newsPanelRight {
-    width:50px;
+.newsPanelItem {
     height:60px;
-    margin:20px 0 20px 0;
+    margin:20px 40px 20px 0;
+
     display:block;
-    float:right;
-    background-image:url('../img/press_arrow_right.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    cursor:pointer;
-}
-.newsPanelRight:hover {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
-    filter: alpha(opacity=65);
-    -moz-opacity: 0.65;
-    -khtml-opacity: 0.65;
-    opacity: 0.65;
-    background-color:#333366;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
 }
 /** ABOUT PANEL**/
 .aboutBg {
@@ -737,7 +744,7 @@ h1
 }
 .mapWrapper {
     width:400px;
-    height:270px;
+    height:220px;
     display:block;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -750,18 +757,20 @@ h1
 }
 .aboutMap {
     width:400px;
-    height:270px;
+    height:220px;
     display:block;
     position:relative;
     z-index: 0;
 }
 .aboutAddress {
     width:400px;
-    height:20px;
+    height:54px;
     color:#efefef;
     font-size:14px;
+    line-height:18px;
     display:block;
     padding-top:20px;
+    text-align: center;
 }
 .aboutText {
     color:#efefef;
@@ -860,7 +869,7 @@ h1
 
 /**YELP FEED**/
 .yp_review {
-    width:100%;
+    width:520px;
     min-height:80px;
     padding: 6px 8px;
     font-size:16px;
@@ -876,7 +885,7 @@ h1
     width:50px;
     margin-left:10px;
     display:inline-block;
-    font-size:11px;
+    font-size:10px;
 }
 .yp_photo {
     width:40px;
@@ -890,8 +899,8 @@ h1
     -webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px;
 }
 .yp_text {
-    width:480px;
-    height:auto;
+    width:460px;
+    min-height:60px;
     display:block;
     float:left;
 }
@@ -904,5 +913,97 @@ h1
 .yp_footer {
     color:rgba(241,161,30,0.85);
     font-size:11px;
+    height:20px;
+    line-height:20px;
+    display:block;
+    width:460px;
 }
 /**PINTEREST STYPING**/
+
+/**NEWS LOGOS**/
+.today {
+    background-image:url('../img/press/today.png');
+}
+.nyt {
+    background-image:url('../img/press/nyt.png');
+}
+.ny1 {
+    background-image:url('../img/press/ny1.png');
+}
+.vvoice {
+    background-image:url('../img/press/vvoice.png');
+}
+.dnainfo {
+    background-image:url('../img/press/dnainfo.png');
+}
+.bbcamerica {
+    background-image: url('../img/press/bbcamerica.png');
+}
+.nyorker {
+    background-image: url('../img/press/nyorker.png');
+}
+.nyp {
+    background-image: url('../img/press/nyp.png');
+}
+.favandco {
+    background-image: url('../img/press/favandco.png');
+}
+ /** SCROLLER **/
+/* Container DIV - automatically generated */
+.simply-scroll-container {
+    position: relative;
+}
+
+/* Clip DIV - automatically generated */
+.simply-scroll-clip {
+    position: relative;
+    overflow: hidden;
+}
+
+/* UL/OL/DIV - the element that simplyScroll is inited on
+Class name automatically added to element */
+.simply-scroll-list {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.simply-scroll-list li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.simply-scroll-list li a {
+    border: none;
+    display: block;
+    width:100px;
+    height:100px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Custom class modifications - adds to / overrides above
+
+.simply-scroll is default base class */
+
+/* Container DIV */
+.simply-scroll {
+    width: 800px;
+    height: 100px;
+}
+
+/* Clip DIV */
+.simply-scroll .simply-scroll-clip {
+    width: 800px;
+    height: 100px;
+}
+
+/* Explicitly set height/width of each list item */
+.simply-scroll .simply-scroll-list li {
+    float: left; /* Horizontal scroll only */
+    width: 100px;
+    height: 100px;
+    margin:0 20px 0 20px;
+}
