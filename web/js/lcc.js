@@ -49,7 +49,7 @@ var photos = [ {
     },{
         "title" : "&quot;I seized the opportunity to find a candy I've been constantly searching for...&quot;<br/><span class='galleryQuote'> - Lauren R</span>",
         "image" : "img/gallery/g5.jpg",
-        "scaleToFit" : 0
+        "scaleToFit" : 1
     },{
         "title" : "I adore this place great atmosphere, fabulous english candy and items&quot;<br/><span class='galleryQuote'> - Zagat Review</span>",
         "image" : "img/gallery/g6.jpg",
@@ -72,9 +72,11 @@ var lcc = {
         this.loadMap();
         this.loadTwitter();
         this.loadYelp();
+        //this.loadTumblr();
         this.dimensions = this.screenSize();
         this.middle = this.screenCenter();
         this.curNews = 0;
+        this.curPanel = '';
         if (this.dimensions.width < 1200) {
             $('.socPlugins').hide();
             $('.pennant').css('left',50);
@@ -82,7 +84,7 @@ var lcc = {
             $('.rightPennant').css('left',150);
             $('.headerRight').css('left',251);
             $('.headerRight').css('width',this.dimensions.width - 251);
-            $('.galleryCaption').css('left',50);
+            //$('.galleryCaption').css('left',50);
             $('.lcc_socIcons').css('margin-right',50);
         } else {
             $('.socPlugins').show();
@@ -91,7 +93,7 @@ var lcc = {
             $('.rightPennant').css('left',300);
             $('.headerRight').css('left',401);
             $('.headerRight').css('width',this.dimensions.width - 401);
-            $('.galleryCaption').css('left',200);
+            //$('.galleryCaption').css('left',200);
             $('.lcc_socIcons').css('margin-right',0);
         }
         this.visit = {gallery:0,candy:0,drinks:0,events:0,facts:0,friends:0,about:0};
@@ -104,6 +106,18 @@ var lcc = {
 
         this.loadFoursquare();
 
+    },
+    showPanel: function(pname) {
+        var scrolltop = $(window).scrollTop();
+        $('.' + pname).show();
+        $('html,body').animate({scrollTop: scrolltop + 200},'slow');
+        this.curPanel = pname;
+    },
+    hidePanel: function(pname) {
+        var scrolltop = $(window).scrollTop();
+        $('.' + pname).hide();
+        $('html,body').animate({scrollTop: scrolltop - 300},'slow');
+        this.curPanel = pname;
     },
     loadMap: function() {
         geocoder = new google.maps.Geocoder();
@@ -187,7 +201,7 @@ var lcc = {
         if (id == 'overview') {
             $('html,body').animate({scrollTop: 0},'slow');
         } else {
-            $('html,body').animate({scrollTop: $("."+id).offset().top-100},'slow');
+            $('html,body').animate({scrollTop: $("."+id).offset().top-40},'slow');
         }
     },
     scroller: function() {
@@ -228,7 +242,7 @@ var lcc = {
                     }
                 });
             }
-            if (scrolltop > 600 && scrolltop < 1200) {
+            if (scrolltop > 650 && scrolltop < 1250) {
                 //viewer is in candy
                 if (lcc.visit.candy == 0) {
                     lcc.visit.candy=1;
@@ -236,7 +250,7 @@ var lcc = {
 
                 }
             }
-            if (scrolltop > 1200 && scrolltop < 1700) {
+            if (scrolltop > 1250 && scrolltop < 1750) {
                 //viewer is in drinks
                 if (lcc.visit.drinks == 0) {
                     lcc.visit.drinks=1;
@@ -246,16 +260,16 @@ var lcc = {
                 }
 
             }
-            if (scrolltop > 1700 && scrolltop < 2400) {
+            if (scrolltop > 1750 && scrolltop < 2450) {
                 //viewer is in events
                 if (lcc.visit.events == 0) {lcc.visit.events=1;_gaq.push(['_trackEvent', 'scroll', 'events', new Date().toUTCString()]);}
             }
-            if (scrolltop > 2400 && scrolltop < 3050) {
+            if (scrolltop > 2450 && scrolltop < 3100) {
                 //viewer is in facts
 
                 if (lcc.visit.facts == 0) {lcc.visit.facts=1;_gaq.push(['_trackEvent', 'scroll', 'facts', new Date().toUTCString()]);}
             }
-            if (scrolltop > 2850 && scrolltop < 3500) {
+            if (scrolltop > 2900 && scrolltop < 3550) {
                 //$('.kcec').css('background-color','#ca4040');
             } else {
                 //$('.kcec').css('background-color','#3D60A9');
@@ -316,13 +330,30 @@ var lcc = {
         $('.friend_yelp').removeClass('friendsIconActive');
         $('.friend_pinterest').removeClass('friendsIconActive');
         $('.friend_foursquare').removeClass('friendsIconActive');
+        $('.friend_tumblr').removeClass('friendsIconActive');
         $('.contentFb').hide();
         $('.contentYp').hide();
         $('.contentFq').hide();
         $('.contentPt').hide();
+        $('.contentTm').hide();
         $('.contentTw').fadeIn();
         $('#twCont').tinyscrollbar();
         _gaq.push(['_trackEvent', 'click', 'friends', 'twitter']);
+    },
+    getTumblr: function() {
+        $('.friend_twitter').removeClass('friendsIconActive');
+        $('.friend_yelp').removeClass('friendsIconActive');
+        $('.friend_facebook').removeClass('friendsIconActive');
+        $('.friend_pinterest').removeClass('friendsIconActive');
+        $('.friend_foursquare').removeClass('friendsIconActive');
+        $('.friend_tumblr').addClass('friendsIconActive');
+        $('.contentTw').hide();
+        $('.contentYp').hide();
+        $('.contentFq').hide();
+        $('.contentPt').hide();
+        $('.contentFb').hide();
+        $('.contentTm').fadeIn();
+        _gaq.push(['_trackEvent', 'click', 'friends', 'tumblr']);
     },
     getFacebook: function() {
         $('.friend_twitter').removeClass('friendsIconActive');
@@ -330,10 +361,12 @@ var lcc = {
         $('.friend_facebook').addClass('friendsIconActive');
         $('.friend_pinterest').removeClass('friendsIconActive');
         $('.friend_foursquare').removeClass('friendsIconActive');
+        $('.friend_tumblr').removeClass('friendsIconActive');
         $('.contentTw').hide();
         $('.contentYp').hide();
         $('.contentFq').hide();
         $('.contentPt').hide();
+        $('.contentTm').hide()
         $('.contentFb').fadeIn();
         _gaq.push(['_trackEvent', 'click', 'friends', 'facebook']);
     },
@@ -342,11 +375,13 @@ var lcc = {
         $('.friend_facebook').removeClass('friendsIconActive');
         $('.friend_foursquare').removeClass('friendsIconActive');
         $('.friend_pinterest').removeClass('friendsIconActive');
+        $('.friend_tumblr').removeClass('friendsIconActive');
         $('.friend_yelp').addClass('friendsIconActive');
         $('.contentFb').hide();
         $('.contentTw').hide();
         $('.contentFq').hide();
         $('.contentPt').hide();
+        $('.contentTm').hide();
         $('.contentYp').fadeIn();
         $('#ypCont').tinyscrollbar();
         _gaq.push(['_trackEvent', 'click', 'friends', 'yelp']);
@@ -356,11 +391,13 @@ var lcc = {
         $('.friend_facebook').removeClass('friendsIconActive');
         $('.friend_yelp').removeClass('friendsIconActive');
         $('.friend_pinterest').removeClass('friendsIconActive');
+        $('.friend_tumblr').removeClass('friendsIconActive');
         $('.friend_foursquare').addClass('friendsIconActive');
         $('.contentFb').hide();
         $('.contentTw').hide();
         $('.contentYp').hide();
         $('.contentPt').hide();
+        $('.contentTm').hide();
         $('.contentFq').fadeIn();
         $('#fqCont').tinyscrollbar();
         _gaq.push(['_trackEvent', 'click', 'friends', 'foursquare']);
@@ -371,12 +408,24 @@ var lcc = {
         $('.friend_yelp').removeClass('friendsIconActive');
         $('.friend_foursquare').removeClass('friendsIconActive');
         $('.friend_pinterest').addClass('friendsIconActive');
+        $('.friend_tumblr').removeClass('friendsIconActive');
         $('.contentFb').hide();
         $('.contentTw').hide();
         $('.contentYp').hide();
         $('.contentFq').hide();
+        $('.contentTm').hide();
         $('.contentPt').fadeIn();
         _gaq.push(['_trackEvent', 'click', 'friends', 'pinterest']);
+    },
+    loadTumblr: function() {
+       (function(){
+           var url = encodeURI('http://thelondoncandyco.tumblr.com/js');
+           var script = document.createElement('script');
+           script.src = url;
+           script.type = 'text/javascript';
+           var head = document.getElementById('tmCont');
+           head.appendChild(script);
+       })();
     },
     loadYelp: function() {
         (function () {
@@ -460,6 +509,68 @@ var lcc = {
         }
         _x = ((this.screenSize().width-hWnd.width)/2)+offsetX;_y = ((this.screenSize().height-hWnd.height)/2)+offsetY;
         return{x:_x,y:_y};
+    },
+    buildModal: function(id, innertext) {
+        try {
+            var s = '<div id="' + id + 'modalscreen" class="modalscreen" onclick="gmh.closeWin(\'' + id + '\');"></div>';
+            s += '<div id="' + id + 'modal" class="modalcontainer modalrounded"></div>';
+            s += '<div id="' + id + 'modalmain" class="modalmain modalrounded">';
+            s += '<div id="' + id + 'modalheader" class="modalheader modalrounded">';
+            s += '<span id="' + id + 'modaltitle" class="modaltitle"></span>';
+            s += '<span id="' + id + 'modalquit" class="modalquit" onclick="gmh.closeWin(\'' + id + '\');">';
+            s += '<img alt="quit" src="res/img/quit.png" /></span></div>';
+            s += '<div id="' + id + 'modalcontent" class="modalcontent modalrounded">';
+            s += '<div id="' + id + 'modalhelp"></div><div id="' + id + 'modalinner">';
+            s += '<span style="color:#3f3f3f;width:100%;display:block;">';
+            s += innertext;
+            s += '</span></div></div></div>';
+            var d = document.createElement('div');
+            d.setAttribute('id', id);
+            var p = document.getElementById('popups');
+            p.appendChild(d);
+            d.innerHTML = s;
+        } catch (e) {
+            this.showError(e);
+        }
+    },
+    loadModal: function(w, h, t,s) {
+        try {
+            var te = "menu";
+            var vscroll = (document.all ? document.scrollTop : window.pageYOffset);
+            var sh = screen.height;
+            $('#' + t + 'modal').css("width", (parseFloat(w) + 20) + "px");
+            $('#' + t + 'modal').css("height", (parseFloat(h) + 20) + "px");
+            $('#' + t + 'modal').css("top", (vscroll + (sh - parseFloat(h))-s) + "px");
+            $('#' + t + 'modalmain').css("width", (parseFloat(w) - 20) + "px");
+            $('#' + t + 'modalmain').css("height", (parseFloat(h) - 20) + "px");
+            $('#' + t + 'modalmain').css("top", (vscroll + (sh - parseFloat(h))-s) + "px");
+            $('#' + t + 'modalheader').css("width", (parseFloat(w) - 20) + "px");
+            $('#' + t + 'modal').css("marginLeft", (-Math.round((parseFloat(w) + 40) / 2)) + "px");
+            $('#' + t + 'modal').css("marginTop", (-Math.round((parseFloat(h) + 40) / 2)) + "px");
+            $('#' + t + 'modalmain').css("marginLeft", (-Math.round(parseFloat(w) / 2)) + "px");
+            $('#' + t + 'modalmain').css("marginTop", (-Math.round(parseFloat(h) / 2)) + "px");
+            $('#' + t + 'modalcontent').css("height", (parseFloat(h) - 80) + "px");
+            $('#' + t + 'modalinner').css("height", (parseFloat(h) - 80) + "px");
+            if (te.length > 0) { $('#' + t + 'modaltitle').html(te); } else { $('#' + t + 'modaltitle').html(t); }
+            $('#' + t + 'modalscreen').css("top", vscroll + "px");
+            $('#' + t + 'modalscreen').show();
+            $('#' + t + 'modal').show();
+            $('#' + t + 'modalmain').show();
+        } catch (e) {
+            console.log(e);
+        }
+    },
+    closeWin: function(s) {
+        try {
+            $('#' + s + 'modalscreen').hide();
+            $('#' + s + 'modal').hide();
+            $('#' + s + 'modalmain').hide();
+            $('#' + s).remove();
+        } catch (e) {
+            console.log(e);
+        }
     }
+
+
 }
 

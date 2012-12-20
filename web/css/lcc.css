@@ -19,6 +19,33 @@ h1
     font-weight:800;
     margin-top:0;
 }
+.modalButton {
+    width:78%;
+    padding:10px 10% 10px 10%;
+    margin-top:20px;
+    display: block;
+    height:20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: rgba(61,96,169,0.5);
+    color:#efefef;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-shadow:0 -1px 1px rgba(68,68,68,0.65);
+    cursor:pointer;
+    box-shadow: 1px 1px 2px rgba(68,68,68,0.5);
+}
+.modalButton:hover {
+    background-color: rgba(61,96,169,0.75);
+
+}
+.modalButton:active {
+    background-color: rgba(61,96,169,0.75);
+    position: relative;
+    top:1px;
+    left:1px;
+}
 .headerLeft {
     display:block;
     position:fixed;
@@ -237,17 +264,26 @@ h1
     background-color:#232323;
     box-shadow: 0 -4px 2px rgba(68,68,68,0.5);
 }
+.galleryBanner {
+    width:100%;
+    height:auto;
+    display: block;
+    position:absolute;
+    top:380px;
+    width:100%;
+    z-index:20;
+    background-color:rgba(68,68,68,0.4);
+    box-shadow: 2px 2px 2px rgba(68,68,68,0.5);
+}
 .galleryCaption
 {
     font-size:38px;
-    height:42px;
+    height:auto;
+    width:auto;
+    padding:20px;
+    padding-left:50px;
     line-height: 42px;
     display:block;
-    position:absolute;
-    top:380px;
-    width:800px;
-    left:200px;
-    z-index:20;
     font-style:italic;
     color:#fff;
     text-shadow:0 -2px 1px rgba(68,68,68,0.95);
@@ -269,7 +305,7 @@ h1
     background-color:#c5E1F3;
     background-image:url('../img/blue_check.png');
     background-repeat: repeat;
-    height:600px;
+    height:650px;
     box-shadow: 0 -2px 3px rgba(68,68,68,0.5);
 }
 .candyHeader {
@@ -358,6 +394,130 @@ h1
     text-align:right;
     font-size:18px;
 }
+.coffeepic {
+    width:80px;
+    height:80px;
+    display:block;
+    float:left;
+    margin:10px;
+    box-shadow: 2px 2px 2px rgba(68,68,68,0.5);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.p1 {
+    background-image: url('../img/coffee1.png');
+}
+.p2 {
+    background-image: url('../img/coffee2.png');
+}
+.p3 {
+    background-image: url('../img/coffee3.png');
+}
+.p4 {
+    background-image: url('../img/coffee4.png');
+}
+.p5 {
+    background-image: url('../img/coffee5.png');
+}
+.p6 {
+    background-image: url('../img/coffee6.png');
+}
+.p7 {
+    background-image: url('../img/coffee7.png');
+}
+.p8 {
+    background-image: url('../img/coffee8.png');
+}
+.p9 {
+    background-image: url('../img/coffee9.png');
+}
+.p9 {
+    background-image: url('../img/coffee9.png');
+}
+.p10 {
+    background-image: url('../img/coffee10.png');
+}
+.p11 {
+    background-image: url('../img/coffee11.png');
+}
+.p12 {
+    background-image: url('../img/coffee12.png');
+}
+.p13 {
+    background-image: url('../img/coffee13.png');
+}
+.p14 {
+    background-image: url('../img/coffee14.png');
+}
+.p15 {
+    background-image: url('../img/coffee15.png');
+}
+.p16 {
+    background-image: url('../img/coffee16.png');
+}
+.p17 {
+    background-image: url('../img/coffee17.png');
+}
+.p18 {
+    background-image: url('../img/coffee18.png');
+}
+.p19 {
+    background-image: url('../img/coffee19.png');
+}
+.p20 {
+    background-image: url('../img/coffee20.png');
+}
+/**DRINK MENU**/
+.drinkMenu {
+    background-image: url('../img/brown.png');
+    background-repeat: repeat;
+    display:none;
+    height:700px;
+    box-shadow:inset 2px 2px 2px rgba(68,68,68,0.5);
+}
+.priceTable {
+    width:100%;
+    padding:0;
+    margin:0;
+    color:#323232;
+}
+.priceTable tr {
+    line-height:22px;
+}
+.priceTable tr:hover {
+    text-shadow:0 -1px 1px rgba(68,68,68,0.65);
+}
+.priceTable td .one_col {
+    width:25%;
+}
+.priceTable td .two_col {
+    width:50%;
+}
+.smallcaption {
+    font-size:12px;
+}
+.midcaption {
+    font-size:14px;
+}
+.rowTitle {
+    font-family:"Courier New";
+    font-weight: bold;
+    font-size:22px;
+    line-height: 40px;
+}
+.cellTop {
+    vertical-align:top;
+}
+.menuFootnotes {
+    width:100%;
+    height:auto;
+    margin-top:70px;
+    margin-bottom:100px;
+    display: block;
+    text-align:center;
+    color:#323232;
+}
 /** EVENTS **/
 .eventsBg
 {
@@ -398,7 +558,8 @@ h1
     width:100%;
     background-repeat: repeat;
     display: block;
-    border-bottom:2px solid #bc2e2c;
+    border-bottom:2px solid #232323;
+    box-shadow:inset 0 2px 2px rgba(68,68,68,0.5);
 }
 /** FUN FACTS**/
 .funFactsHeader {
@@ -546,7 +707,7 @@ h1
     background-repeat:repeat;
     display: block;
     box-shadow: 2px 2px 4px rgba(239,239,239,0.8);
-    border-bottom:2px solid rgba(239,239,239,0.5);
+    border-bottom:2px solid #232323;
 
 }
 .friendsHeader {
@@ -596,6 +757,10 @@ h1
     display: none;
 }
 .contentYp {
+    display:none;
+    color:#efefef;
+}
+.contentTm {
     display:none;
     color:#efefef;
 }
@@ -711,6 +876,11 @@ h1
 }
 .friend_pinterest {
     background-image: url('../img/grey_pinterest.png');
+    background-position:center center;
+    background-repeat: no-repeat;
+}
+.friend_tumblr {
+    background-image: url('../img/grey_youtube.png');
     background-position:center center;
     background-repeat: no-repeat;
 }
@@ -955,6 +1125,18 @@ h1
 }
 .favandco {
     background-image: url('../img/press/favandco.png');
+}
+.wsj {
+    background-image: url('../img/press/wsj.png');
+}
+.tony {
+    background-image: url('../img/press/timeout.png');
+}
+.foxb {
+    background-image: url('../img/press/foxbu.png');
+}
+.racked {
+    background-image: url('../img/press/racked.png');
 }
  /** SCROLLER **/
 /* Container DIV - automatically generated */
