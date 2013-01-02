@@ -30,16 +30,16 @@ var facts = [ {
     }
 ];
 var photos = [ {
-        "title" : "&quot;For sweets that are simply smashing, English expats and local sugar fiends head to this 'cheerful' UES British candy emporium&quot;<br/><span class='galleryQuote'> - Zagat 2012</span>",
+        "title" : "&quot;For sweets that are simply smashing, English expats<br/>and local sugar fiends head to this 'cheerful'<br/>UES British candy emporium&quot;<br/><span class='galleryQuote'> - Zagat 2012</span>",
         "image" : "img/gallery/g1.jpg",
         "scaleToFit": 1,
         "color" : '#993333'
     }, {
-        "title" : "&quot;Cool theme.  Candy from London.  Tried a coffee drink here, and like it.  Stores like this are fun!!&quot;<br/><span class='galleryQuote'> - Richard S.</span>",
+        "title" : "&quot;Cool theme.  Candy from London.  Tried a coffee drink here,<br/>...and like it.  Stores like this are fun!!&quot;<br/><span class='galleryQuote'> - Richard S.</span>",
         "image" : "img/gallery/g2.jpg",
         "scaleToFit" : 1
     }, {
-        "title" : "&quot;This is a yummy fun candy store. All the items sold are from England. Their coffee is delicious as is their Earl Grey Tea&quot;<br/><span class='galleryQuote'> - Jamiee A</span>",
+        "title" : "&quot;This is a yummy fun candy store. All the items sold are<br/>from England. Their coffee is delicious as is their Earl Grey Tea&quot;<br/><span class='galleryQuote'> - Jamiee A</span>",
         "image" : "img/gallery/g3.jpg",
         "scaleToFit" : 0
     },{
@@ -47,12 +47,29 @@ var photos = [ {
         "image" : "img/gallery/g4.jpg",
         "scaleToFit" : 0
     },{
-        "title" : "&quot;I seized the opportunity to find a candy I've been constantly searching for...&quot;<br/><span class='galleryQuote'> - Lauren R</span>",
+        "title" : "&quot;I seized the opportunity to find a candy I've been<br/>constantly searching for...&quot;<br/><span class='galleryQuote'> - Lauren R</span>",
         "image" : "img/gallery/g5.jpg",
         "scaleToFit" : 1
     },{
-        "title" : "I adore this place great atmosphere, fabulous english candy and items&quot;<br/><span class='galleryQuote'> - Zagat Review</span>",
+        "title" : "&quot;I adore this place great atmosphere, fabulous<br/>English candy and items&quot;<br/><span class='galleryQuote'> - Zagat Review</span>",
         "image" : "img/gallery/g6.jpg",
+        "scaleToFit" : 1
+    },{
+        "title" : "&quot;People love our quirky gifts as much as our candy&quot;<br/><span class='galleryQuote'> - Jigs Patel</span>",
+        "image" : "img/gallery/g7.jpg",
+        "scaleToFit" : 1
+    },{
+        "title" : "&quot;Nice little candy store for some not so american candy,<br/>very friendly service. Slightly pricey but that was expected from the get go so not a negative....&quot;<br/><span class='galleryQuote'> - Mike C</span>",
+        "image" : "img/gallery/g8.jpg",
+        "scaleToFit" : 1
+    }
+    ,{
+        "title" : "Four crispy wafer fingers covered with<br/>70% dark chocolate. YUM!&quot;<br/><span class='galleryQuote'> - Kimmy T</span>",
+        "image" : "img/gallery/g9.jpg",
+        "scaleToFit" : 1
+    },{
+        "title" : "&quot;London Candy supporting the<br/>St. George charity&quot;<br/><span class='galleryQuote'> - London Candy</span>",
+        "image" : "img/gallery/g10.jpg",
         "scaleToFit" : 1
     }
 
